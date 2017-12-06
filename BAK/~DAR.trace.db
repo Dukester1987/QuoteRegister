@@ -1,0 +1,3 @@
+10-12 14:02:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO QR_Clients (`ID`, `GlobeID`, `ClientName`) VALUES (51, '', 'O'Neill Civil[*]')"; SQL statement:
+INSERT INTO QR_Clients (`ID`, `GlobeID`, `ClientName`) VALUES (51, '', 'O'Neill Civil') [42000-175]

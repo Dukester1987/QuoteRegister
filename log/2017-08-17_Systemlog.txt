@@ -1,0 +1,6 @@
+Thu Aug 17 12:37:04 AEST 2017
+Database Sucessfully initialised
+Thu Aug 17 14:34:07 AEST 2017
+Database Sucessfully initialised
+Thu Aug 17 14:34:46 AEST 2017
+Database Sucessfully initialised

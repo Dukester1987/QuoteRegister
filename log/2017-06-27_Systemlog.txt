@@ -1,0 +1,2 @@
+Tue Jun 27 13:26:15 AEST 2017
+Database Sucessfully initialised
