@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<root version="1.0.4">
+<root version="1.0.9">
   <dir name="inc">
     <file name="dbcon.properties"/>
     <file name="DBCreate.sql"/>
@@ -17,7 +17,7 @@
     <file name="AbsoluteLayout.jar"/>    
   </dir>
   <file name="QuoteRegister.jar"/>  
-  <file name="DAR_Updater.jar"/>
+  <file name="DAR_Updater.jar"/>  
   <file name="~DAR.h2.db"/>
   <dir name="changelog">
     <file name="version_manifest.properties"/>

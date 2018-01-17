@@ -34,5 +34,12 @@ public class AWSAddressObject extends AddressObject {
     public void setName(String Name) {
         this.Name = Name;
     }    
+
+    @Override
+    public String toString() {
+        return getID()+ " "+ getName()+" "+super.toString(); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
     
 }

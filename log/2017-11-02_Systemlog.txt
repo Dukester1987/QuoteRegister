@@ -1,9 +1,0 @@
-Thu Nov 02 10:54:44 AEDT 2017
-org.h2.jdbc.JdbcSQLException: Column "ID" not found; SQL statement:
-SELECT * FROM AWS_Products WHERE ID = 'SM 5' [42122-175]
-Thu Nov 02 10:54:44 AEDT 2017
-org.h2.jdbc.JdbcSQLException: Column "ID" not found; SQL statement:
-SELECT * FROM AWS_Products WHERE ID = 'WASTE TO LANDFIL' [42122-175]
-Thu Nov 02 10:54:44 AEDT 2017
-org.h2.jdbc.JdbcSQLException: Column "ID" not found; SQL statement:
-SELECT * FROM AWS_Products WHERE ID = 'CARTAGE ONLY' [42122-175]

@@ -13,6 +13,7 @@ import DO.ProductObject;
 import java.util.List;
 import java.util.UUID;
 import javax.swing.JOptionPane;
+import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 import org.jdesktop.swingx.treetable.DefaultTreeTableModel;
 import quoteregister.GuiIcon;
 import quoteregister.TreeTableWrapper;
@@ -263,13 +264,15 @@ public class ProductGui extends javax.swing.JFrame {
     private void insertorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertorActionPerformed
         try {
             prepareVariables();
-            prepareNewJobObject(selectedRows);
-            if(wrapper.getOptionDialog("Do you want to add rate for this product", "Question")==JOptionPane.YES_OPTION){
-                wrapper.createNewTransportRate(myProduct);
+            if(prepareNewJobObject(selectedRows)){
+                if(wrapper.getOptionDialog("Do you want to add rate for this product", "Question")==JOptionPane.YES_OPTION){
+                    wrapper.createNewTransportRate(myProduct);
+                }
+                wrapper.refreshTable();                    
+                this.dispose();
+            } else {
+                wrapper.getInformationDialog("This product is already allocated to the job", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
-            wrapper.refreshTable();
-            GuiIcon guiIcon = new GuiIcon(this);            
-            this.dispose();
         } catch (Exception ex) {            
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this,"Value has to be number","Warning",JOptionPane.ERROR_MESSAGE);
@@ -350,23 +353,35 @@ public class ProductGui extends javax.swing.JFrame {
     private javax.swing.JTextField volume;
     // End of variables declaration//GEN-END:variables
 
-    private void prepareNewJobObject(int[] selectedRows) throws Exception{                                               
+    private boolean prepareNewJobObject(int[] selectedRows) throws Exception{ 
+        boolean success = false;
         if(myProduct==null){ // creating new
             if(selectedRows!=null)
-                jobID=getJobID(selectedRows);                
-            myProduct = new ProductAllObject(ID, jobID, prod, vol, Notes, ongoingpr, direction, address);            
-            ObjectCollector.addProductRate(myProduct);
-            myProduct.dbSave();            
-        } else {
+                jobID=getJobID(selectedRows);                  
+            myProduct = new ProductAllObject(ID, jobID, prod, vol, Notes, ongoingpr, direction, address);     
+            if(checkExistingProduct(myProduct)){
+                ObjectCollector.addProductRate(myProduct);
+                myProduct.dbSave();       
+                success = true;
+                System.out.println("Creating new product");
+            } else {
+                myProduct = null;
+            }
+        } else { // update existing            
             myProduct.setProductAllObject(ID, jobID, prod, vol, Notes, ongoingpr, direction, address);            
-            myProduct.dbUpdate();                        
+            if(checkExistingProduct(myProduct)){            
+                myProduct.dbUpdate();           
+                success = true;
+                System.out.println("Editing product");
+            }
         }
-
+        return success;
     }
 
     private void startUP() {
         initComponents();
         initProductList();
+        AutoCompleteDecorator.decorate(product);
         this.address = null;
         if(type==2){
             System.out.println("getting values");
@@ -465,5 +480,18 @@ public class ProductGui extends javax.swing.JFrame {
         City.setText(city);
         Zip.setText(zip);
         State.setSelectedItem(state);
+    }
+
+    private boolean checkExistingProduct(ProductAllObject myProduct) {        
+        List<ProductAllObject> prods = ObjectCollector.getProductAllByJobID(myProduct.getJobID());
+        for (ProductAllObject prd : prods) {
+            if(prd.getProduct().getCODE().equals(myProduct.getProduct().getCODE())){
+                if(!prd.getID().equals(myProduct.getID())){
+                    System.out.println(prd.getProduct().getCODE()+" / "+myProduct.getProduct().getCODE());
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }

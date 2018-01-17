@@ -15,6 +15,7 @@ import GUIs.ClientGui;
 import GUIs.JobGui;
 import GUIs.ProductGui;
 import GUIs.RateGui;
+import GUIs.addProductGui;
 import Table.ChildNode;
 import Table.Node;
 import Table.RootNode;
@@ -57,6 +58,9 @@ public class TreeTableWrapper {
     private RateGui erGui;
     private static String activeFilter = "Filter - All Jobs";
     private static String textFilter = "";
+    private addProductGui aProdGui;
+    private String productFilter = "";
+    private String rateFilter = "";
     
     
     public TreeTableWrapper(){               
@@ -99,19 +103,6 @@ public class TreeTableWrapper {
     private List<Object[]> getContent() {
         List<Object[]> content = new ArrayList<>();
         
-        content.add(new Object[] {"LD-14456"});
-        content.add(new Object[] {"M ENM", true, "Email", new Date()});
-        content.add(new Object[] {"T&D", true, "Email", new Date(),new Date(),new Date(),300D, "30-32 Fifth Avenue Blacktown", 18.0, 11.0,7.0});
-        content.add(new Object[] {"Rigid", true, "Email", new Date(),new Date(),new Date(),300D, "30-32 Fifth Avenue Blacktown", 18.0, 11.0,7.0});
-        content.add(new Object[] {"LD-14456"});
-        content.add(new Object[] {"M ENM", true, "Email", new Date()});
-        content.add(new Object[] {"T&D", true, "Email", new Date(),new Date(),new Date(),300D, "30-32 Fifth Avenue Blacktown", 18.0, 11.0,7.0});
-        content.add(new Object[] {"Rigid", true, "Email", new Date(),new Date(),new Date(),300D, "30-32 Fifth Avenue Blacktown", 18.0, 11.0,7.0});
-        content.add(new Object[] {"LD-14456"});
-        content.add(new Object[] {"M ENM", true, "Email", new Date()});
-        content.add(new Object[] {"T&D", true, "Email", new Date(),new Date(),new Date(),300D, "30-32 Fifth Avenue Blacktown", 18.0, 11.0,7.0});
-        content.add(new Object[] {"Rigid", true, "Email", new Date(),new Date(),new Date(),300D, "30-32 Fifth Avenue Blacktown", 18.0, 11.0,7.0});
-        
         return content;
     }    
 
@@ -124,7 +115,8 @@ public class TreeTableWrapper {
      * @param data
      * @param node
      */
-    public void addNewNode(Object[] data,int action, int row) {                
+    public void addNewNode(Object[] data,int action, int row) {     
+        try {
         ChildNode myChild = new ChildNode(data);        
         switch (action){
             case 1:                
@@ -136,16 +128,23 @@ public class TreeTableWrapper {
                 System.out.println(model.getValueAt(getNodeFromRow(row), 4));
                 break;
         }
+        } catch (Exception e){
+            System.out.println("error");
+        }
     }
     
-    public void removeAll(){  
-        int childCount = model.getChildCount(root); //get number of childs for root
-        if(childCount>0){
-            for (int i = 1; i <= childCount; i++) {
-                Object node = model.getChild(root, 0);
-                model.removeNodeFromParent((MutableTreeTableNode) node);
-            }
-        }        
+    public void removeAll(){ 
+        try {
+            int childCount = model.getChildCount(root); //get number of childs for root
+            if(childCount>0){
+                for (int i = 1; i <= childCount; i++) {
+                    Object node = model.getChild(root, 0);
+                    model.removeNodeFromParent((MutableTreeTableNode) node);
+                }
+            }  
+        } catch(Exception e) {
+            System.out.println(e.toString());
+        }
     }
     
     public void setValueAt(Object value, int row, int column) {
@@ -298,26 +297,28 @@ public class TreeTableWrapper {
         System.err.println("REFRESHING TABLE");
         removeAll();
         
-        List<JobObject> jobs = getJobsApplyingFilter();
-        for (JobObject job : jobs) {
-            ChildNode jobNode = new ChildNode(job.getTreeTableObject());
-            model.insertNodeInto(jobNode, root, 0);                        
-            
-            List<ProductAllObject> products = ObjectCollector.getProductAllByJobID(job.getJobID());
-            for (ProductAllObject product : products) {
-                ChildNode productNode = new ChildNode(product.getTableObject());
-                model.insertNodeInto(productNode, jobNode, 0);
-                
-                List<TransportRateObject> transRates = ObjectCollector.getTransportRateByProductID(product.getID());
-                for (TransportRateObject transRate : transRates) {
-                    ChildNode transNode = new ChildNode(transRate.getTableObject());
-                    model.insertNodeInto(transNode, productNode, 0);
+        try {
+            List<JobObject> jobs = getJobsApplyingFilter();
+            for (JobObject job : jobs) {
+                ChildNode jobNode = new ChildNode(job.getTreeTableObject());
+                model.insertNodeInto(jobNode, root, 0);                        
+
+                List<ProductAllObject> products = ObjectCollector.getProductAllByJobID(job.getJobID());
+                for (ProductAllObject product : products) {
+                    ChildNode productNode = new ChildNode(product.getTableObject());
+                    model.insertNodeInto(productNode, jobNode, 0);
+
+                    List<TransportRateObject> transRates = ObjectCollector.getTransportRateByProductID(product.getID());
+                    for (TransportRateObject transRate : transRates) {
+                        ChildNode transNode = new ChildNode(transRate.getTableObject());
+                        model.insertNodeInto(transNode, productNode, 0);
+                    }
                 }
-            }
-        }        
-        
-        table.expandAll();
-        
+            }   
+            table.expandAll();
+        } catch(Exception e) {
+            System.out.println(e.toString());
+        }               
     }
 
     void setSelectedFilter(String filterText) {
@@ -335,11 +336,16 @@ public class TreeTableWrapper {
             jobs = ObjectCollector.getJobsByStatus(activeFilter);
         }  
                 
-        if(textFilter.isEmpty()){
+        if(textFilter.isEmpty() && productFilter.isEmpty() && rateFilter.isEmpty()){
             return jobs;            
         } else {
-            return filterJobObject(jobs,textFilter);
-        }                
+            jobs = filterJobObject(jobs, textFilter);
+            if(!productFilter.isEmpty()){
+                jobs = filterProductObject(jobs);
+            }
+            
+            return jobs;
+        }         
     }    
 
     void removeSelectedRow(int[] selectedRows) {
@@ -426,8 +432,9 @@ public class TreeTableWrapper {
         String text = "Are you sure you want to delete selected Row?\nAll data will be permanently lost";
         String title = "Question";
         if(getOptionDialog(text, title)==JOptionPane.YES_OPTION){
-            if(ObjectCollector.getTransportRates().remove(getRateByRow(selectedRow))){
-
+            TransportRateObject rate = getRateByRow(selectedRow);
+            if(ObjectCollector.getTransportRates().remove(rate)){
+                rate.dbDelete();
             }   
         }
     }
@@ -447,10 +454,20 @@ public class TreeTableWrapper {
         return ObjectCollector.getTransportRateByID((String) model.getValueAt(node, 3));
     }        
 
-    void filterByText(String text) {
+    void filterByJob(String text) {
         textFilter = text;
         refreshTable();
     }
+    
+    void filterByProduct(String text) {
+        productFilter = text;
+        refreshTable();
+    }
+
+    void filterByRate(String text) {
+        rateFilter = text;
+        refreshTable();
+    }    
 
     private List<JobObject> filterJobObject(List<JobObject> jobs, String textFilter) {      
         List<JobObject> thisJob = jobs.stream().collect(Collectors.toList());
@@ -462,6 +479,33 @@ public class TreeTableWrapper {
         }
         System.out.println("original batch size: "+ startSize +" | filtered batch size: "+thisJob.size());
         return thisJob;
+    }
+    
+    private List<JobObject> filterProductObject(List<JobObject> jobs) {
+        for(int i = jobs.size()-1;i>=0;i--){
+            boolean removeJob = true;
+            List<ProductAllObject> AllProducts = ObjectCollector.getProductAllByJobID(jobs.get(i).getJobID());
+            for (ProductAllObject AllProduct : AllProducts) {
+                if(AllProduct.search(productFilter)){
+                    removeJob = false;
+                }
+            }
+            if(removeJob){
+                jobs.remove(jobs.get(i));
+            }
+        }   
+        return jobs;
+    }    
+
+    void addNewProduct(Gui aThis) {
+        if(!Functions.isGuiShowing(aProdGui)){
+            aProdGui = new addProductGui(this);
+            Functions.createModalGui(aProdGui);
+        }        
+    }
+
+    public void getInformationDialog(String message, String title, int msgType) {
+        JOptionPane.showMessageDialog(null,message, title, msgType);        
     }
     
 }

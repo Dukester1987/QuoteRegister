@@ -9,6 +9,7 @@ import DO.AWSAddressObject;
 import DO.AddressObject;
 import DO.ClientObject;
 import DO.ContactObject;
+import DO.JobIDChange;
 import DO.JobObject;
 import DO.ObjectCollector;
 import DO.ProductAllObject;
@@ -47,7 +48,8 @@ public class dbInit {
         createClients();
         createUsers();
         createJobs();
-        createJobProducts();        
+        createJobProducts();
+        createJobIDChange();
     }
     
     private void createAddreses() {
@@ -174,7 +176,8 @@ public class dbInit {
             say("init Login table");
             while(rs.next()){
                 User tgO = new User(rs.getInt("ID"), rs.getString("LoginName"), rs.getString("Password"), rs.getString("Rights"), rs.getInt("Status"), rs.getTimestamp("LastUpload"), rs.getTimestamp("LastDownload"), rs.getString("Name"), rs.getString("LastName"));
-                ObjectCollector.addUser(tgO);                
+                ObjectCollector.addUser(tgO);   
+                System.out.println(tgO.getLoginName()+" / "+tgO.getName());
             }
             say("---- DONE ----");
         } catch (SQLException ex) {
@@ -208,7 +211,8 @@ public class dbInit {
                         ,contact
                         ,Delivery
                         ,pr.getString("Notes")
-                        ,pr.getString("WANID"));
+                        ,pr.getString("WANID")
+                        ,pr.getBoolean("internal"));
                 ObjectCollector.addJob(tgO);
             }
             say("---- DONE ----");
@@ -245,6 +249,21 @@ public class dbInit {
 
     private void say(String text) {
         System.out.println(text);
+    }
+
+    private void createJobIDChange() {
+        ResultSet pr = db.dbSelect("QR_JobIDChange");
+        try {
+            say("INIT QR_JobIDChange table");
+            while(pr.next()) {
+                JobIDChange jic = new JobIDChange(pr.getInt("ID"), pr.getInt("OldJobID"), pr.getInt("NewJobID"), pr.getBoolean("executed"));
+                ObjectCollector.addJobIDChange(jic);
+            }
+            say("---- DONE ----");
+        } catch (SQLException ex) {
+            say("---- ERROR ----");
+            Logger.getLogger(dbInit.class.getName()).log(Level.SEVERE, null, ex);            
+        }
     }
     
     

@@ -282,18 +282,21 @@ public class RateGui extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void insertorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertorActionPerformed
-        prepareNewJobObject();
-        wrapper.refreshTable();        
-        this.dispose();
-        if(wrapper.getOptionDialog("Do you want to create another rate?", "Question")==JOptionPane.YES_OPTION){
-            System.out.println("clicked yes");
-            if(product==null){
-                product = ObjectCollector.getProductAllByID(ProductID);                           
+        if(prepareNewJobObject()) {
+            wrapper.refreshTable();        
+            this.dispose();
+            if(wrapper.getOptionDialog("Do you want to create another rate?", "Question")==JOptionPane.YES_OPTION){
+                System.out.println("clicked yes");
+                if(product==null){
+                    product = ObjectCollector.getProductAllByID(ProductID);                           
+                }
+                System.out.println(ProductID);
+                System.out.println(product);
+                wrapper.createNewTransportRate(product);
             }
-            System.out.println(ProductID);
-            System.out.println(product);
-            wrapper.createNewTransportRate(product);
-        }        
+        } else {
+            wrapper.getInformationDialog("This product already have rate for selected truck group", "error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_insertorActionPerformed
 
     private void transRateKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_transRateKeyReleased
@@ -336,23 +339,36 @@ public class RateGui extends javax.swing.JFrame {
         
     }
 
-    private void prepareNewJobObject() {                
+    private boolean prepareNewJobObject() {   
+        boolean success = true; //expecting succesful operation
         TruckGroupObject prod = (TruckGroupObject) DelType.getSelectedItem();
         Double materialCost = checkNumValidity(maCost);
         Double transport = checkNumValidity(transRate);
         Double specialProject = checkNumValidity(specProject);
         Double totalPrice = checkNumValidity(totPrice);
-        String notes = this.notes.getText();
-        String ID = UUID.randomUUID().toString();
+        String notes = this.notes.getText();        
         ProductID = ProductID==null?getProductID():ProductID;
         if(rate!=null){
-            rate.setTransportRateObject(ProductID, ID, prod, materialCost, transport, specialProject, notes);
-            rate.dbUpdate();
+            String ID = rate.getID();
+            if(checkExistingRate(rate)){
+                rate.setTransportRateObject(ProductID, ID, prod, materialCost, transport, specialProject, notes);
+                rate.dbUpdate();
+            } else {
+                success = false;
+            }
         } else {
-            rate = new TransportRateObject(ProductID, ID, prod, materialCost, transport, specialProject, notes);
-            ObjectCollector.addTransportRate(rate);
-            rate.dbSave();
+            String ID = UUID.randomUUID().toString();
+            rate = new TransportRateObject(ProductID, ID, prod, materialCost, transport, specialProject, notes);   
+            if(checkExistingRate(rate)){
+                ObjectCollector.addTransportRate(rate);
+                rate.dbSave();
+            } else {
+                rate = null;
+                success = false;
+            }
         }
+        
+        return success;
                        
     }
     
@@ -415,5 +431,17 @@ public class RateGui extends javax.swing.JFrame {
         DefaultTreeTableModel model = wrapper.getModel();
         Object node = wrapper.getNodeFromRow(row);        
         return (String) model.getValueAt(node, 2);
+    }
+
+    private boolean checkExistingRate(TransportRateObject rate) {
+        List<TransportRateObject> rates = ObjectCollector.getTransportRateByProductID(rate.getProductID());
+        for (TransportRateObject r : rates) {
+            if(r.getTruckGroupObject().getGroupName().equals(rate.getTruckGroupObject().getGroupName())){
+                if(!r.getID().equals(rate.getID())){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }

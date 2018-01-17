@@ -9,13 +9,13 @@ package DO;
  *
  * @author ldulka
  */
-public class ProductObject {
+public class ProductObject extends AbstractDatabaseObject{
         
     String CODE, NAME;   
-    AddressObject Addrss;
+    AWSAddressObject Addrss;
     boolean direction;
     
-    public ProductObject(String CODE, String NAME, AddressObject Address, boolean direction) {        
+    public ProductObject(String CODE, String NAME, AWSAddressObject Address, boolean direction) {        
         this.CODE = CODE;
         this.NAME = NAME;
         this.Addrss = Address;
@@ -26,11 +26,11 @@ public class ProductObject {
         return CODE;
     }
 
-    public AddressObject getAddrss() {
+    public AWSAddressObject getAddrss() {
         return Addrss;
     }
 
-    public void setAddrss(AddressObject Addrss) {
+    public void setAddrss(AWSAddressObject Addrss) {
         this.Addrss = Addrss;
     }
 
@@ -58,8 +58,48 @@ public class ProductObject {
     public String toString() {
         return getCODE();
     }
-    
-    
-    
-    
+
+    @Override
+    public Object[][] getDBObject() {
+        return new Object[][] {
+                {"CODE",
+                 "NAME",
+                 "Direction",
+                 "Address"
+                },{
+                    getCODE(),
+                    getNAME(),
+                    isDirection(),
+                    getAddrss().getID()
+                }
+        };
+    }
+
+    @Override
+    public Object[][] getDBWhere() {
+        return new Object[][]{
+            {"CODE"},{"="},{getDBID()},{"AND"}
+        };
+    }
+
+    @Override
+    public Object getDBID() {
+        return getCODE();
+    }
+
+    @Override
+    public Object[] getSearchObject() {
+        return new Object[] {
+            getCODE(),
+            getNAME(),
+            isDirection(),
+            getAddrss()
+        };
+    }
+
+    @Override
+    public String getTableName() {
+        return "AWS_Products";
+    }
+                
 }

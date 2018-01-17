@@ -23,10 +23,21 @@ public class JobObject extends AbstractDatabaseObject{
     private ClientObject client;
     private ContactObject contact;
     private AddressObject address;
-    private String WANID;    
+    private String WANID;       
+    private int oldJobID;
+    private boolean internal;
 
-    public JobObject(int jobID, User user, String quote, String status, Date dateQuoted, Date startDate, Date endDate, ClientObject client, ContactObject contact, AddressObject address, String notes, String WANID) {
-        editObject(jobID, user, quote, status, dateQuoted, startDate, endDate, client, contact, address, notes, WANID);
+    public JobObject(int jobID, User user, String quote, String status, Date dateQuoted, Date startDate, Date endDate, ClientObject client, ContactObject contact, AddressObject address, String notes, String WANID, Boolean internal) {
+        editObject(jobID, user, quote, status, dateQuoted, startDate, endDate, client, contact, address, notes, WANID, internal);
+        this.oldJobID = jobID;
+    }
+    
+    public void setOldJobID(int ID){
+        this.oldJobID = ID;
+    }
+    
+    public int getOldJobID(){
+        return oldJobID;
     }
 
     public int getJobID() {
@@ -121,6 +132,14 @@ public class JobObject extends AbstractDatabaseObject{
         return user.getName().substring(0,1)+user.getLastName().substring(0,1)+"-"+getJobID();
     }
 
+    public boolean isInternal() {
+        return internal;
+    }
+
+    public void setInternal(boolean internal) {
+        this.internal = internal;
+    }
+
     public Object[] getTreeTableObject() {        
         Object[] obj = new Object[] {getJobConst(),
             getJobID(),
@@ -138,8 +157,8 @@ public class JobObject extends AbstractDatabaseObject{
         return obj;
     }
 
-    public void editObject(int jobID, User user, String quote, String status, Date dateQuoted, Date startDate, Date endDate, ClientObject client, ContactObject contact, AddressObject address, String notes, String WANID) {
-        this.jobID = jobID;
+    public void editObject(int jobID, User user, String quote, String status, Date dateQuoted, Date startDate, Date endDate, ClientObject client, ContactObject contact, AddressObject address, String notes, String WANID, boolean internal) {
+        this.jobID = jobID;        
         this.user = user;
         this.quote = quote;
         this.status = status;
@@ -151,6 +170,7 @@ public class JobObject extends AbstractDatabaseObject{
         this.address = address;
         this.notes = notes;
         this.WANID = WANID;
+        this.internal = internal;
     }
 
     public String getWANID() {
@@ -178,7 +198,8 @@ public class JobObject extends AbstractDatabaseObject{
             "Street",
             "City",
             "ZIP",
-            "State"},
+            "State",
+            "Internal"},
             {getJobID(),
             getUser().getId(),
             getDateQuoted(),
@@ -193,13 +214,14 @@ public class JobObject extends AbstractDatabaseObject{
             getAddress().getStreet(),
             getAddress().getCity(),
             getAddress().getZip(),
-            getAddress().getState()}};
+            getAddress().getState(),
+            isInternal()}};
     }
     
     @Override
     public Object[] getSearchObject() {
         return new Object[]{
-            getJobID(),
+            String.valueOf(jobID),
             getDateQuoted(),
             getStartDate(),
             getEndDate(),
@@ -226,7 +248,7 @@ public class JobObject extends AbstractDatabaseObject{
     @Override
     public Object[][] getDBWhere() {
         return new Object[][]{
-            {"ID","UserID"},{"=","="},{getJobID(),user.getId()},{"AND","AND"}
+            {"ID","UserID"},{"=","="},{getOldJobID(),user.getId()},{"AND","AND"}
         };
     } 
     
@@ -234,6 +256,19 @@ public class JobObject extends AbstractDatabaseObject{
     public Object getDBID() {
         return getJobID();
     }    
+    
+    @Override
+    public void dbUpdate() {
+        super.dbUpdate();
+        if(this.oldJobID!=this.jobID){
+            //log changes into DB
+            int id = ObjectCollector.getNextIDForJobIDChanges();            
+            JobIDChange jib = new JobIDChange(id, oldJobID, jobID, false);
+            ObjectCollector.addJobIDChange(jib);
+            jib.dbSave();
+        }
+        this.oldJobID = this.jobID;
+    }
     
     
     

@@ -30,6 +30,7 @@ public class ObjectCollector {
     private static List<TruckGroupObject> truckGroups;
     private static List<User> users;
     private static List<AWSAddressObject> AWSAddress;
+    private static ArrayList<JobIDChange> JobIDChanges;
 
     public static void cleanCollections(){
         clients.clear();
@@ -40,6 +41,7 @@ public class ObjectCollector {
         transportRate.clear();
         truckGroups.clear();
         users.clear();
+        JobIDChanges.clear();
     }
     
     public static List<User> getUsers(){
@@ -157,6 +159,22 @@ public class ObjectCollector {
     public static List<AWSAddressObject> getAWSAddresses() {
         return AWSAddress;
     }
+
+    public static void addJobIDChange(JobIDChange jic) {
+        JobIDChanges.add(jic);
+    }
+    
+    public static List<JobIDChange> getJobIDChanges(){
+        return JobIDChanges;
+    }
+    
+    public static int getNextIDForJobIDChanges(){        
+        try{
+            return JobIDChanges.get(JobIDChanges.size()-1).getID()+1;            
+        } catch (IndexOutOfBoundsException e) {
+            return 1;
+        }
+    }
     
     private LocalWraper db;
 
@@ -179,6 +197,7 @@ public class ObjectCollector {
         truckGroups = new ArrayList<>();        
         users = new ArrayList<>();    
         AWSAddress = new ArrayList<>();
+        JobIDChanges = new ArrayList<>();
     }
     
     //TRANSPORT RATE
@@ -290,10 +309,14 @@ public class ObjectCollector {
     }
     
     public static JobObject getJobByID(int ID){
+        try{
         List<JobObject> result = jobs.stream()
                 .filter(item -> item.getJobID() == ID)
                 .collect(Collectors.toList());
         return result.get(0);
+        } catch(Exception e) {
+            return null;
+        }
     }
     
     public static void addAWSAddress(AWSAddressObject address) {

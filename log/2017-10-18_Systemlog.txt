@@ -1,6 +1,0 @@
-Wed Oct 18 12:12:57 AEDT 2017
-org.h2.jdbc.JdbcSQLException: Column "ID" not found; SQL statement:
-SELECT * FROM AWS_Products WHERE ID = 'S GM' [42122-175]
-Wed Oct 18 12:12:57 AEDT 2017
-org.h2.jdbc.JdbcSQLException: NULL not allowed for column "CODE"; SQL statement:
-INSERT INTO AWS_Products (Address) VALUES ('SM') [23502-175]

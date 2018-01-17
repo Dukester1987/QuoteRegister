@@ -510,7 +510,19 @@ CREATE TABLE IF NOT EXISTS `QR_Jobs` (
   `Street` varchar(300) NOT NULL,
   `City` varchar(60) NOT NULL,
   `ZIP` varchar(20) NOT NULL,
-  `State` varchar(20) NOT NULL
+  `State` varchar(20) NOT NULL,
+  `internal` tinyint(1) DEFAULT NULL
+);
+
+--
+-- Table structure for table `QR_JobIDChange`
+--
+
+CREATE TABLE `QR_JobIDChange` ( 
+  `ID` int(11) NOT NULL,
+  `OldJobID` int(11) NOT NULL,
+  `NewJobID` int(11) NOT NULL,
+  `executed` tinyint(1) NULL DEFAULT NULL
 );
 
 -- --------------------------------------------------------
@@ -762,9 +774,22 @@ ALTER TABLE `QR_Jobs`
 ALTER TABLE `QR_TransportRate`
   ADD PRIMARY KEY (`ID`,`ProductAllID`);
 
+--
+-- Indexes for table `QR_JobIDChange`
+--
+ALTER TABLE `QR_JobIDChange`
+  ADD PRIMARY KEY (`ID`);  
+
   
+--
+-- AUTO_INCREMENT for table `QR_JobIDChange`
+--
+ALTER TABLE `QR_JobIDChange`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
-
+--
+-- AUTO_INCREMENT for table `QR_Clients`
+--
 ALTER TABLE `QR_Clients`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 

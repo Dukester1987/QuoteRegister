@@ -11,6 +11,7 @@ import DO.ClientObject;
 import DO.ContactObject;
 import DO.JobObject;
 import DO.ObjectCollector;
+import DO.ProductAllObject;
 import Functions.Functions;
 import Functions.TimeWrapper;
 import java.sql.Date;
@@ -18,6 +19,7 @@ import java.util.List;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import org.jdesktop.swingx.JXTreeTable;
+import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 import org.jdesktop.swingx.treetable.DefaultTreeTableModel;
 import quoteregister.Gui;
 import quoteregister.GuiIcon;
@@ -102,6 +104,9 @@ public class JobGui extends javax.swing.JFrame {
         verbalQuotes = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        JobID = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        Internal = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -177,6 +182,19 @@ public class JobGui extends javax.swing.JFrame {
 
         jLabel14.setText("Job Owner:");
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+
+        JobID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                JobIDKeyReleased(evt);
+            }
+        });
+        jPanel1.add(JobID, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 95, -1));
+
+        jLabel15.setText("JobID:");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, -1));
+
+        Internal.setText("Internal");
+        jPanel1.add(Internal, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, -1, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/ok16.png"))); // NOI18N
         jButton1.setText("Insert");
@@ -398,9 +416,15 @@ public class JobGui extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CityKeyReleased
 
+    private void JobIDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JobIDKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JobIDKeyReleased
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField City;
     private javax.swing.JTextField GlobeID3;
+    private javax.swing.JCheckBox Internal;
+    private javax.swing.JTextField JobID;
     private javax.swing.JComboBox<String> State;
     private javax.swing.JTextField Street;
     private javax.swing.JTextField WANID;
@@ -417,6 +441,7 @@ public class JobGui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -441,7 +466,12 @@ public class JobGui extends javax.swing.JFrame {
         //let magic happened
         
         String Quotes = verbalQuotes.getSelectedItem().toString();        
-        newID = newID==0?ObjectCollector.getNextJobID():newID;
+        newID = Integer.parseInt(JobID.getText());            
+        if(ObjectCollector.getJobByID(newID) != null){
+            if(Job==null || Job.getJobID()!=newID){            
+                throw new Exception("Job with this number already exists in DB");
+            }
+        }
         
         ClientObject Client = (ClientObject) client.getSelectedItem();
         if(Client==null)
@@ -468,21 +498,42 @@ public class JobGui extends javax.swing.JFrame {
         
         //Create JobObject
         if(Job!=null) {
-            Job.editObject(newID, Job.getUser(), Quotes, Status, dateQuoted, startDate, endDate, Client, Contact, Delivery, Notes, WANID);
-            Job.dbUpdate();
-        } else {        
+            if(Job.getJobID()!=newID){ //Job ID changed
+                //change jobID to new one for all products
+                try{
+                    List<ProductAllObject> products = ObjectCollector.getProductRates();
+                    for (ProductAllObject product : products) {
+                        if(product.getJobID()==Job.getJobID()){
+                            if(product.getAddress().getState()!=null){
+                                product.setJobID(newID);
+                                System.out.println(newID);
+                                product.dbUpdate();
+                                System.out.println("updating product "+product.toString());
+                            } else {
+                                throw new Exception("Address missing for product fill at leaset State to continue");
+                            }
+                        }
+                    }
+                }catch (Exception e){
+                    throw new Exception("Products are incompatible, please edit product first!");
+                }
+            }                        
+            Job.editObject(newID, Job.getUser(), Quotes, Status, dateQuoted, startDate, endDate, Client, Contact, Delivery, Notes, WANID,Internal.isSelected());
+            Job.dbUpdate();            
+        } else {      
             System.out.println("saving job user is: "+jobOwner.getSelectedItem());
-            Job = new JobObject(newID, (User) jobOwner.getSelectedItem(), Quotes, Status, dateQuoted, startDate, endDate, Client, Contact, Delivery, Notes, WANID);
+            Job = new JobObject(newID, (User) jobOwner.getSelectedItem(), Quotes, Status, dateQuoted, startDate, endDate, Client, Contact, Delivery, Notes, WANID,Internal.isSelected());
             ObjectCollector.addJob(Job);
             System.out.println(newID);
             Job.dbSave();
-        }
-        
+        }        
         //sreturn Job.getTreeTableObject();     
     }
 
     private void initValues() {                     
         newID = (int) getValue(1);
+        JobID.setText(Integer.toString(newID));
+        //JobID.setEnabled(false);
         Job = ObjectCollector.getJobByID(newID);
         status.setSelectedItem(Job.getStatus());
         jobOwner.setSelectedItem(Job.getUser());
@@ -498,6 +549,7 @@ public class JobGui extends javax.swing.JFrame {
         contact.setSelectedItem(Job.getContact());        
         notes.setText(Job.getNotes());
         WANID.setText(Job.getWANID());
+        Internal.setSelected(Job.isInternal());
     }
     
     private Object getValue(int Column){
@@ -518,6 +570,9 @@ public class JobGui extends javax.swing.JFrame {
     }
 
     private void startUp() {
+        JobID.setText(Integer.toString(ObjectCollector.getNextJobID()));
+        AutoCompleteDecorator.decorate(client);
+        AutoCompleteDecorator.decorate(contact);
         users = ObjectCollector.getUsersForList();        
         addUsersToDropDown(users,jobOwner);                
         refreshClients();        

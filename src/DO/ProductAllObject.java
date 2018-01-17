@@ -19,9 +19,11 @@ public class ProductAllObject extends AbstractDatabaseObject{
     private boolean ongoing;
     private AddressObject address;
     private boolean direction;
+    private int oldJobID;
 
     public ProductAllObject(String ID, int JobID, ProductObject Product, Double volume, String notes, boolean ongoing, boolean direction, AddressObject address) {
         setProductAllObject(ID, JobID, Product, volume, notes, ongoing, direction, address);        
+        oldJobID = JobID;
     }
     
     public boolean isOngoing() {
@@ -80,6 +82,15 @@ public class ProductAllObject extends AbstractDatabaseObject{
     public void setNotes(String notes) {
         this.notes = notes;
     }
+    
+
+    public int getOldJobID() {
+        return oldJobID;
+    }
+
+    public void setOldJobID(int oldJobID) {
+        this.oldJobID = oldJobID;
+    }    
     
     public void setProductAllObject(String ID, int JobID, ProductObject Product, Double volume, String notes, boolean ongoing, boolean direction, AddressObject address){
         this.ID = ID;        
@@ -163,7 +174,7 @@ public class ProductAllObject extends AbstractDatabaseObject{
     @Override
     public Object[][] getDBWhere() {
         return new Object[][]{
-            {"ID","JobID"},{"=","="},{getID(),getJobID()},{"AND","AND"}
+            {"ID","JobID"},{"=","="},{getID(),getOldJobID()},{"AND","AND"}
         };
     }
 
@@ -177,6 +188,11 @@ public class ProductAllObject extends AbstractDatabaseObject{
         return getID();
     }
     
+    @Override
+    public void dbUpdate() {
+        super.dbUpdate();
+        oldJobID = JobID;
+    }
     
     
 }

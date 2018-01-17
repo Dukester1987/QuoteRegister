@@ -219,6 +219,9 @@ public class ChangeManager {
             String SiteID = getValuesFromInsert(clw.getSQLString(),2);
             String ProductID = getValuesFromInsert(clw.getSQLString(),3);
             query = String.format("SELECT * FROM %s WHERE ID = '%s' AND SiteID = '%s' AND ProductID = '%s'", clw.getAffectedTable(),clw.getRowID(),SiteID,ProductID);                
+
+        } else if(clw.getAffectedTable().equalsIgnoreCase("AWS_Products") && clw.getOperation().equalsIgnoreCase("Insert")){ //keys ID, SiteID            
+            query = String.format("SELECT * FROM %s WHERE CODE = '%s'", clw.getAffectedTable(),clw.getRowID());
             
         } else {
             query = String.format("SELECT * FROM %s WHERE ID = '%s'", clw.getAffectedTable(),clw.getRowID());

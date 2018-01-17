@@ -86,8 +86,9 @@ public class Gui extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        textFilter = new javax.swing.JTextField();
+        jobFilter = new javax.swing.JTextField();
         sync = new javax.swing.JButton();
+        productFilter = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -96,6 +97,7 @@ public class Gui extends javax.swing.JFrame {
         newMenuJob = new javax.swing.JMenuItem();
         menuNewRate = new javax.swing.JMenuItem();
         menuNewTransRate = new javax.swing.JMenuItem();
+        newProduct = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         jMenuItem1 = new javax.swing.JMenuItem();
 
@@ -254,9 +256,9 @@ public class Gui extends javax.swing.JFrame {
                 .addGap(0, 6, Short.MAX_VALUE))
         );
 
-        textFilter.addKeyListener(new java.awt.event.KeyAdapter() {
+        jobFilter.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                textFilterKeyReleased(evt);
+                jobFilterKeyReleased(evt);
             }
         });
 
@@ -264,6 +266,12 @@ public class Gui extends javax.swing.JFrame {
         sync.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 syncActionPerformed(evt);
+            }
+        });
+
+        productFilter.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                productFilterKeyReleased(evt);
             }
         });
 
@@ -316,8 +324,18 @@ public class Gui extends javax.swing.JFrame {
             }
         });
         jMenu2.add(menuNewTransRate);
+
+        newProduct.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        newProduct.setText("New Product");
+        newProduct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newProductActionPerformed(evt);
+            }
+        });
+        jMenu2.add(newProduct);
         jMenu2.add(jSeparator3);
 
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem1.setText("New Cient");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -348,9 +366,11 @@ public class Gui extends javax.swing.JFrame {
                         .addComponent(jButton5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(sync)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textFilter, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                        .addGap(73, 73, 73)
+                        .addGap(15, 15, 15)
+                        .addComponent(jobFilter, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(productFilter, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                        .addGap(24, 24, 24)
                         .addComponent(jButton4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(TransRate)
@@ -365,17 +385,19 @@ public class Gui extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(4, 4, 4)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(addRate)
-                    .addComponent(TransRate)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(textFilter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sync))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(sync, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton1)
+                        .addComponent(jButton2)
+                        .addComponent(jButton3)
+                        .addComponent(addRate)
+                        .addComponent(TransRate)
+                        .addComponent(jButton4)
+                        .addComponent(jButton5)
+                        .addComponent(jobFilter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(productFilter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -489,14 +511,22 @@ public class Gui extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
-    private void textFilterKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textFilterKeyReleased
+    private void jobFilterKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jobFilterKeyReleased
         //Filter is utilised
-        wrapper.filterByText(textFilter.getText());
-    }//GEN-LAST:event_textFilterKeyReleased
+        wrapper.filterByJob(jobFilter.getText());
+    }//GEN-LAST:event_jobFilterKeyReleased
 
     private void syncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncActionPerformed
         t.interrupt();
     }//GEN-LAST:event_syncActionPerformed
+
+    private void newProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newProductActionPerformed
+        wrapper.addNewProduct(this);
+    }//GEN-LAST:event_newProductActionPerformed
+
+    private void productFilterKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_productFilterKeyReleased
+        wrapper.filterByProduct(productFilter.getText());
+    }//GEN-LAST:event_productFilterKeyReleased
 
     /**
      * @param args the command line arguments
@@ -528,16 +558,18 @@ public class Gui extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
+    private javax.swing.JTextField jobFilter;
     private javax.swing.JMenuItem menuNewRate;
     private javax.swing.JMenuItem menuNewTransRate;
     private javax.swing.JMenuItem newJob;
     private javax.swing.JMenuItem newMenuJob;
+    private javax.swing.JMenuItem newProduct;
     private javax.swing.JMenuItem newRate;
     private javax.swing.JMenuItem newTransRate;
     private javax.swing.JMenuItem packColumns;
     private javax.swing.JPopupMenu popupMenu;
+    private javax.swing.JTextField productFilter;
     private javax.swing.JButton sync;
-    private javax.swing.JTextField textFilter;
     // End of variables declaration//GEN-END:variables
 
     private void buttonController(int nodeLevel) {
@@ -579,7 +611,8 @@ public class Gui extends javax.swing.JFrame {
         GuiIcon GuiIcon = new GuiIcon(this);
         initComponents();
         
-        PromptSupport.setPrompt("type to filter", textFilter);
+        PromptSupport.setPrompt("type to filter jobs", jobFilter);
+        PromptSupport.setPrompt("type to filter products", productFilter);        
         
         setMinimumSize(getSize());
         
