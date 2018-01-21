@@ -241,7 +241,7 @@ public class ObjectCollector {
 
     public static List<ClientObject> getClients() {
         if(clients != null)
-            clients.sort(Comparator.comparing(ClientObject::getID));
+            clients.sort(Comparator.comparing(ClientObject::getClientName));
         return clients;
     }
     

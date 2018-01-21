@@ -10,11 +10,15 @@ import DO.ContactObject;
 import DO.ObjectCollector;
 import static Functions.Functions.createModalGui;
 import static Functions.Functions.isGuiShowing;
+import Functions.RXTable;
 import java.util.List;
-import javax.swing.JFrame;
+import javax.swing.RowFilter;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableRowSorter;
+import org.jdesktop.swingx.prompt.PromptSupport;
 import quoteregister.GuiIcon;
 
 /**
@@ -38,9 +42,12 @@ public class ClientGui extends javax.swing.JFrame {
     public ClientGui() {    
         super("Client list");
         initComponents();
+        hideIDs();
         addListeners();
         setMinimumSize(getSize());
-        GuiIcon ico = new GuiIcon(this);
+        GuiIcon ico = new GuiIcon(this);        
+        
+        PromptSupport.setPrompt("type to filter", Filter);
         
         clientTableModel = (DefaultTableModel) clientTable.getModel();
         contactTableModel = (DefaultTableModel) contactTable.getModel();
@@ -65,6 +72,7 @@ public class ClientGui extends javax.swing.JFrame {
         contactTable = new Functions.RXTable();
         jScrollPane4 = new javax.swing.JScrollPane();
         clientTable = new Functions.RXTable();
+        Filter = new javax.swing.JTextField();
 
         editSelectedClient.setText("Edit Selected Item");
         editSelectedClient.addActionListener(new java.awt.event.ActionListener() {
@@ -122,11 +130,11 @@ public class ClientGui extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Globe ID", "Client"
+                "ID", "Client", "Globe ID", "Contacts"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -139,6 +147,15 @@ public class ClientGui extends javax.swing.JFrame {
             }
         });
         jScrollPane4.setViewportView(clientTable);
+        if (clientTable.getColumnModel().getColumnCount() > 0) {
+            clientTable.getColumnModel().getColumn(3).setPreferredWidth(40);
+        }
+
+        Filter.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FilterKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -148,10 +165,12 @@ public class ClientGui extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(8, 8, 8)
-                        .addComponent(jButton2))
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Filter))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 569, Short.MAX_VALUE)
@@ -164,9 +183,11 @@ public class ClientGui extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Filter, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton1)
+                        .addComponent(jButton2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3)
@@ -224,7 +245,12 @@ public class ClientGui extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_contactTableMouseReleased
 
+    private void FilterKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FilterKeyReleased
+        setFilter(Filter.getText());
+    }//GEN-LAST:event_FilterKeyReleased
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Filter;
     public Functions.RXTable clientTable;
     public Functions.RXTable contactTable;
     private javax.swing.JMenuItem editSelectedClient;
@@ -263,8 +289,9 @@ public class ClientGui extends javax.swing.JFrame {
         CleanTable(clientTableModel);
         for (ClientObject client : clients) {  
             clientTableModel.addRow(new Object[]{client.getID(),
+                                                 client.getClientName(),
                                                  client.getGlobeID(),
-                                                 client.getClientName()});
+                                                 ObjectCollector.getContactsForClient(client.getID()).size()});
         }
     }
 
@@ -316,5 +343,48 @@ public class ClientGui extends javax.swing.JFrame {
             });
         }
     }
+
+    private void hideIDs() {
+        Object[][] tables = new Object[][] {            
+            {
+                contactTable,new Object[]{"ID","Client ID"}
+            },{
+                clientTable,new Object[]{"ID"}
+            }
+        };
+        try {
+            columnRemover(tables);
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+    }
+
+    private void columnRemover(Object[][] tables) throws Exception{
+        for (Object[] table : tables) {
+            if(table[0] instanceof RXTable){
+                
+                RXTable selectedTable = (RXTable) table[0];
+                Object[] columns = (Object[]) table[1];
+                if(columns.length<1){
+                    throw new Exception("No columns to remove");
+                }
+                for (Object colName : columns) {
+                    TableColumn column = selectedTable.getColumn(colName);
+                    selectedTable.removeColumn(column);
+                }
+                
+            } else {
+                throw new Exception("first parameter must be table class");
+            }
+        }
+    }
+    
+    private void setFilter(String text) {
+        DefaultTableModel dm = (DefaultTableModel) clientTable.getModel();
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel> (dm);
+        clientTable.setRowSorter(tr);
+        
+        tr.setRowFilter(RowFilter.regexFilter("(?i)" + text));
+    }    
     
 }

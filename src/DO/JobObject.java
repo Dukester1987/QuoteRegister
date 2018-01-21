@@ -236,7 +236,8 @@ public class JobObject extends AbstractDatabaseObject{
             getAddress().getStreet(),
             getAddress().getCity(),
             getAddress().getState(),
-            getAddress().getZip(),            
+            getAddress().getZip(),
+            isInternal()?"internal":false
         };
     }    
 

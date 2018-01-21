@@ -326,7 +326,7 @@ public class Gui extends javax.swing.JFrame {
         jMenu2.add(menuNewTransRate);
 
         newProduct.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        newProduct.setText("New Product");
+        newProduct.setText("Create Product");
         newProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 newProductActionPerformed(evt);
@@ -431,7 +431,8 @@ public class Gui extends javax.swing.JFrame {
                     QuoteRegisterTable.setRowSelectionInterval(Row, Row);
                     popupMenu.show(QuoteRegisterTable, evt.getX(), evt.getY());
                 } else if(evt.getClickCount()==2) {
-                    wrapper.expansionControll(Row);
+                    //wrapper.expansionControll(Row);                    
+                    wrapper.editSelectedRow(Row);
                 }
             } catch(Exception e){
                 System.err.println("No rows available");
@@ -611,6 +612,8 @@ public class Gui extends javax.swing.JFrame {
         GuiIcon GuiIcon = new GuiIcon(this);
         initComponents();
         
+        initTitle();
+        
         PromptSupport.setPrompt("type to filter jobs", jobFilter);
         PromptSupport.setPrompt("type to filter products", productFilter);        
         
@@ -737,6 +740,11 @@ public class Gui extends javax.swing.JFrame {
             return result.substring(1, result.length()-1);
         }
         return result;
+    }
+
+    private void initTitle() {
+        Version v = new Version();
+        setTitle("Quote Register v"+v.version);
     }
     
     

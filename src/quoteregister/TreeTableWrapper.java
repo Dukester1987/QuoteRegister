@@ -507,6 +507,11 @@ public class TreeTableWrapper {
     public void getInformationDialog(String message, String title, int msgType) {
         JOptionPane.showMessageDialog(null,message, title, msgType);        
     }
+
+    public void editSelectedRow(int Row) {
+        int[] rows = {Row,0};
+        editSelectedRow(rows);
+    }
     
 }
 
