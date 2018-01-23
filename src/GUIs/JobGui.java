@@ -46,6 +46,7 @@ public class JobGui extends javax.swing.JFrame {
     private JobObject Job;    
     private boolean WANID_MANDATORY = false;
     private List<User> users;
+    private boolean writeDown;
 
     /**
      * Creates new form newJob
@@ -107,6 +108,7 @@ public class JobGui extends javax.swing.JFrame {
         JobID = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         Internal = new javax.swing.JCheckBox();
+        jSpinner1 = new javax.swing.JSpinner();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -195,6 +197,7 @@ public class JobGui extends javax.swing.JFrame {
 
         Internal.setText("Internal");
         jPanel1.add(Internal, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, -1, -1));
+        jPanel1.add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, -1, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/ok16.png"))); // NOI18N
         jButton1.setText("Insert");
@@ -417,7 +420,7 @@ public class JobGui extends javax.swing.JFrame {
     }//GEN-LAST:event_CityKeyReleased
 
     private void JobIDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JobIDKeyReleased
-        // TODO add your handling code here:
+        writeDown = Functions.checkIntForTextField(JobID);
     }//GEN-LAST:event_JobIDKeyReleased
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -455,6 +458,7 @@ public class JobGui extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JComboBox<User> jobOwner;
     private javax.swing.JTextArea notes;
     private com.toedter.calendar.JDateChooser startDate;
@@ -464,6 +468,9 @@ public class JobGui extends javax.swing.JFrame {
 
     private void prepareNewJobObject() throws Exception {
         //let magic happened
+        
+        if(!writeDown)
+            throw new Exception("Job ID must be a number");        
         
         String Quotes = verbalQuotes.getSelectedItem().toString();        
         newID = Integer.parseInt(JobID.getText());            
@@ -486,6 +493,7 @@ public class JobGui extends javax.swing.JFrame {
         
         if(WANID_MANDATORY && WANID.getText().isEmpty())
             throw new Exception("WAN ID needs to be set when Status is approved");
+        
         
         AddressObject Delivery = new AddressObject(Street.getText(), City.getText(),Zip.getText(),State.getSelectedItem().toString());
         Date dateQuoted = new Date(System.currentTimeMillis());

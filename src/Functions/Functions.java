@@ -6,12 +6,14 @@
 package Functions;
 
 import GUIs.JSFrame;
+import java.awt.Color;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.CharacterIterator;
 import java.text.StringCharacterIterator;
 import javax.swing.JFrame;
+import javax.swing.JTextField;
 
 /**
  *
@@ -77,6 +79,20 @@ public class Functions {
         JFrame g = (JFrame) gui;
         return g.isVisible();
     }
+    
+    public static boolean checkIntForTextField(JTextField tfield) {
+        double number = -1;
+        boolean writeDown;
+        try {
+            number = Double.parseDouble(tfield.getText());
+            writeDown = true;            
+            tfield.setForeground(Color.black);
+        } catch (Exception e) {
+            writeDown = false;
+            tfield.setForeground(Color.red);
+        }
+        return writeDown;
+    }    
     
    public static String forHTML(String aText){
      final StringBuilder result = new StringBuilder();

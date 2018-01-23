@@ -96,10 +96,15 @@ public class ObjectCollector {
     }
     
     public static ProductObject getProductByID(String ID) {
+        try{
         List<ProductObject> list = products.stream()
                 .filter(p -> p.getCODE().equalsIgnoreCase(ID))
                 .collect(Collectors.toList());             
         return list.get(0);
+        } catch (Exception e) {
+            System.err.println("Exception cought in getProductByID for Job #"+ID);
+            return null;
+        }
     }
     
     public static List<ProductObject> getProducts(){
