@@ -42,6 +42,7 @@ public class ObjectCollector {
         truckGroups.clear();
         users.clear();
         JobIDChanges.clear();
+        AWSAddress.clear();
     }
     
     public static List<User> getUsers(){
@@ -162,6 +163,7 @@ public class ObjectCollector {
     }
 
     public static List<AWSAddressObject> getAWSAddresses() {
+        System.out.println("Addresses in batch "+AWSAddress.size());
         return AWSAddress;
     }
 
@@ -314,9 +316,13 @@ public class ObjectCollector {
     }
     
     public static JobObject getJobByID(int ID){
+        return getJobByID(ID, "");
+    }
+    
+    public static JobObject getJobByID(int ID, String suffix){
         try{
         List<JobObject> result = jobs.stream()
-                .filter(item -> item.getJobID() == ID)
+                .filter(item -> item.getJobID() == ID && item.getSuffix().equalsIgnoreCase(suffix))
                 .collect(Collectors.toList());
         return result.get(0);
         } catch(Exception e) {

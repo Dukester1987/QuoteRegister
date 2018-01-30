@@ -497,6 +497,7 @@ CREATE TABLE IF NOT EXISTS `QR_JobProducts` (
 
 CREATE TABLE IF NOT EXISTS `QR_Jobs` (
   `ID` int(11) NOT NULL,
+  `suffix` varchar(10) NOT NULL DEFAULT '',
   `UserID` int(11) NOT NULL,
   `DateQuoted` datetime NOT NULL,
   `StartDate` date NULL DEFAULT NULL,
@@ -522,6 +523,8 @@ CREATE TABLE `QR_JobIDChange` (
   `ID` int(11) NOT NULL,
   `OldJobID` int(11) NOT NULL,
   `NewJobID` int(11) NOT NULL,
+  `suffix` varchar(20) NOT NULL DEFAULT '',
+  `suffixOld` varchar(20) NOT NULL DEFAULT '',  
   `executed` tinyint(1) NULL DEFAULT NULL
 );
 
@@ -766,7 +769,7 @@ ALTER TABLE `QR_JobProducts`
 -- Indexes for table `QR_Jobs`
 --
 ALTER TABLE `QR_Jobs`
-  ADD PRIMARY KEY (`ID`,`UserID`);
+  ADD PRIMARY KEY (`ID`,`suffix`,`UserID`);
 
 --
 -- Indexes for table `QR_TransportRate`

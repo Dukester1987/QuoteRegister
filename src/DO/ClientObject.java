@@ -51,7 +51,7 @@ public class ClientObject extends AbstractDatabaseObject {
 
     @Override
     public String toString() {
-        return getClientName();
+        return getClientName()+" ("+getID()+")";
     }
 
     @Override

@@ -1,0 +1,1274 @@
+Wed Jan 24 09:30:44 AEDT 2018
+Database Sucessfully initialised
+Wed Jan 24 09:31:03 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (1, 1, '', 'Asphalt Laying Services') [42121-175]
+Wed Jan 24 09:31:03 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (1, 1, 1, 'Michelle', 'Michelle', '', '9672 4554') [42121-175]
+Wed Jan 24 09:31:03 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (2, 2, '', 'Archer Tippers') [42121-175]
+Wed Jan 24 09:31:03 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (2, 2, 2, 'Matt', 'Matt', '', '0412 654 701') [42121-175]
+Wed Jan 24 09:31:03 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (3, 3, '', 'Turps Tippers') [42121-175]
+Wed Jan 24 09:31:03 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (3, 3, 3, 'Ian ', 'Turner', 'turpstippers@yahoo.com.au', '0400 662 246') [42121-175]
+Wed Jan 24 09:31:03 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (4, 4, '', 'Burton Contractors') [42121-175]
+Wed Jan 24 09:31:03 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (4, 4, 4, 'Vijay', 'Arcot', '', '0409 951 524') [42121-175]
+Wed Jan 24 09:31:03 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (5, 5, '', 'JKW') [42121-175]
+Wed Jan 24 09:31:03 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (5, 5, 5, 'Jayse', 'Sui', '', '0437 928 754') [42121-175]
+Wed Jan 24 09:31:03 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (6, 6, '', 'Diona') [42121-175]
+Wed Jan 24 09:31:03 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (6, 6, 6, 'Brett', 'Vanderlight', '', '0428 420 549') [42121-175]
+Wed Jan 24 09:31:03 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (7, 7, '', 'Steward Coobms') [42121-175]
+Wed Jan 24 09:31:03 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (7, 7, 7, 'Steward', 'Coobms', '', '0408 581 227') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (8, 8, '', 'Asbestos REM') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (8, 8, 8, 'Wade ', 'Rogers', '', '0420 978 737') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (9, 9, '', 'Ward Civil') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (9, 9, 9, 'Alex', 'Mountakis', '', '0418 485 330') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (10, 10, '', 'COD Duncan Mc Killop') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (10, 10, 10, 'Duncan', 'Mc Killop', '', '0411 097 738') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (11, 11, '', 'WCX M5') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (11, 11, 11, 'Brian', 'Donohue', '', '0436 012 507') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (12, 12, '', 'Veljohn') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (12, 12, 12, 'Daniel ', 'Vella', '', '0437 323 628') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (13, 13, '', 'BTS') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (13, 13, 13, 'Anne ', 'Bostock', '', '0403 561 234') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (14, 14, '', 'North Shore Paving') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (14, 14, 14, 'Gaye', 'Lewin', '', '9416 0100') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (15, 15, '', 'Ford Civil') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (15, 15, 15, 'Robert', 'Browne', '', '0403 265 468') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (16, 16, '', 'WEM') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (16, 16, 16, 'Tvrtko', 'Tepic', '', '0433 454 950') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (17, 17, '', 'Attcall') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (17, 17, 17, 'Jordan', 'Kenyon', '', '0410 568 683') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (18, 18, '', 'NRT') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (18, 18, 18, 'Michaela ', 'Hodson', '', '0427 400 832') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (19, 19, '', 'BTS') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (19, 19, 19, 'Anne', 'Bostock', '', '0403 561 234') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (20, 20, '', 'BTS') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (20, 20, 20, 'Anne', 'Bostock', '', '0403 561 234') [42121-175]
+Wed Jan 24 09:31:04 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (21, 21, '', 'Haslin') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (21, 21, 21, 'William', 'Huynh', '', '8522 3900') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (22, 22, '', 'BMD') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (22, 22, 22, 'Boa', 'Nguyen', '', '0417 705 969') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (23, 23, '', 'Antoun Civil') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (23, 23, 23, 'Nelson', 'Wong', '', '0419 314 131') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (24, 24, '', 'Skipmaster/Dartanyon') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (24, 24, 24, 'Greg', 'Kellner', '', '0416 191 799') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (25, 25, '', 'Nepean Landscapes') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (25, 25, 25, 'Christian', 'Wheatley', '', '0416 052 153') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (26, 26, '', 'Abbca Developments') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (26, 26, 26, 'Joe', 'Joe', '', '0414 973 118') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (27, 27, '', 'Holdmark Constructions') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (27, 27, 27, 'Tony', 'Tony', '', '98895540') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (28, 28, '', 'Haines Bros') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (28, 28, 28, 'Tolga', 'Cengiz', '', '47748899') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (29, 29, '', 'Schembris Earthmoving') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (29, 29, 29, 'Charlie', 'Schembri', '', '?') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (30, 30, '', 'Pace Eathworks') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (30, 30, 30, 'Craig', 'Pace', '', '0415 914 776') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (31, 31, '', 'AGH') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (31, 31, 31, 'Emily', 'Emily', '', '62990323') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (32, 32, 23, 'Joe', 'Diaz', '', '0419 938 247') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (32, 32, '', 'Codmah') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (33, 33, 32, 'Andy', 'Saunders', '', '0413 215 788') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (33, 33, '', 'M Collins') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (34, 34, 33, 'Nicole ', 'Pearce', '', '0419 297 107') [42121-175]
+Wed Jan 24 09:31:05 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (1, 1, '123123', 'LukasDulka') [42121-175]
+Wed Jan 24 09:31:06 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (1, 1, 1, 'Lukas', 'Dulka', 'lukas.dulka@gmail.com', '0434261391') [42121-175]
+Wed Jan 24 09:31:06 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Column "ID" not found; SQL statement:
+SELECT * FROM AWS_Products WHERE ID = 'S GM' [42122-175]
+Wed Jan 24 09:33:48 AEDT 2018
+Database Sucessfully initialised
+Wed Jan 24 09:33:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (1, 1, '', 'Asphalt Laying Services') [42121-175]
+Wed Jan 24 09:33:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (1, 1, 1, 'Michelle', 'Michelle', '', '9672 4554') [42121-175]
+Wed Jan 24 09:33:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (2, 2, '', 'Archer Tippers') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (2, 2, 2, 'Matt', 'Matt', '', '0412 654 701') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (3, 3, '', 'Turps Tippers') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (3, 3, 3, 'Ian ', 'Turner', 'turpstippers@yahoo.com.au', '0400 662 246') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (4, 4, '', 'Burton Contractors') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (4, 4, 4, 'Vijay', 'Arcot', '', '0409 951 524') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (5, 5, '', 'JKW') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (5, 5, 5, 'Jayse', 'Sui', '', '0437 928 754') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (6, 6, '', 'Diona') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (6, 6, 6, 'Brett', 'Vanderlight', '', '0428 420 549') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (7, 7, '', 'Steward Coobms') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (7, 7, 7, 'Steward', 'Coobms', '', '0408 581 227') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (8, 8, '', 'Asbestos REM') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (8, 8, 8, 'Wade ', 'Rogers', '', '0420 978 737') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (9, 9, '', 'Ward Civil') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (9, 9, 9, 'Alex', 'Mountakis', '', '0418 485 330') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (10, 10, '', 'COD Duncan Mc Killop') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (10, 10, 10, 'Duncan', 'Mc Killop', '', '0411 097 738') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (11, 11, '', 'WCX M5') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (11, 11, 11, 'Brian', 'Donohue', '', '0436 012 507') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (12, 12, '', 'Veljohn') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (12, 12, 12, 'Daniel ', 'Vella', '', '0437 323 628') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (13, 13, '', 'BTS') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (13, 13, 13, 'Anne ', 'Bostock', '', '0403 561 234') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (14, 14, '', 'North Shore Paving') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (14, 14, 14, 'Gaye', 'Lewin', '', '9416 0100') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (15, 15, '', 'Ford Civil') [42121-175]
+Wed Jan 24 09:34:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (15, 15, 15, 'Robert', 'Browne', '', '0403 265 468') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (16, 16, '', 'WEM') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (16, 16, 16, 'Tvrtko', 'Tepic', '', '0433 454 950') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (17, 17, '', 'Attcall') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (17, 17, 17, 'Jordan', 'Kenyon', '', '0410 568 683') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (18, 18, '', 'NRT') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (18, 18, 18, 'Michaela ', 'Hodson', '', '0427 400 832') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (19, 19, '', 'BTS') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (19, 19, 19, 'Anne', 'Bostock', '', '0403 561 234') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (20, 20, '', 'BTS') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (20, 20, 20, 'Anne', 'Bostock', '', '0403 561 234') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (21, 21, '', 'Haslin') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (21, 21, 21, 'William', 'Huynh', '', '8522 3900') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (22, 22, '', 'BMD') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (22, 22, 22, 'Boa', 'Nguyen', '', '0417 705 969') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (23, 23, '', 'Antoun Civil') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (23, 23, 23, 'Nelson', 'Wong', '', '0419 314 131') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (24, 24, '', 'Skipmaster/Dartanyon') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (24, 24, 24, 'Greg', 'Kellner', '', '0416 191 799') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (25, 25, '', 'Nepean Landscapes') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (25, 25, 25, 'Christian', 'Wheatley', '', '0416 052 153') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (26, 26, '', 'Abbca Developments') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (26, 26, 26, 'Joe', 'Joe', '', '0414 973 118') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (27, 27, '', 'Holdmark Constructions') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (27, 27, 27, 'Tony', 'Tony', '', '98895540') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (28, 28, '', 'Haines Bros') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (28, 28, 28, 'Tolga', 'Cengiz', '', '47748899') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (29, 29, '', 'Schembris Earthmoving') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (29, 29, 29, 'Charlie', 'Schembri', '', '?') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (30, 30, '', 'Pace Eathworks') [42121-175]
+Wed Jan 24 09:34:01 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (30, 30, 30, 'Craig', 'Pace', '', '0415 914 776') [42121-175]
+Wed Jan 24 09:34:02 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (31, 31, '', 'AGH') [42121-175]
+Wed Jan 24 09:34:02 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (31, 31, 31, 'Emily', 'Emily', '', '62990323') [42121-175]
+Wed Jan 24 09:34:02 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (32, 32, 23, 'Joe', 'Diaz', '', '0419 938 247') [42121-175]
+Wed Jan 24 09:34:02 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (32, 32, '', 'Codmah') [42121-175]
+Wed Jan 24 09:34:02 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (33, 33, 32, 'Andy', 'Saunders', '', '0413 215 788') [42121-175]
+Wed Jan 24 09:34:02 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (33, 33, '', 'M Collins') [42121-175]
+Wed Jan 24 09:34:02 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (34, 34, 33, 'Nicole ', 'Pearce', '', '0419 297 107') [42121-175]
+Wed Jan 24 09:34:02 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (1, 1, '123123', 'LukasDulka') [42121-175]
+Wed Jan 24 09:34:02 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (1, 1, 1, 'Lukas', 'Dulka', 'lukas.dulka@gmail.com', '0434261391') [42121-175]
+Wed Jan 24 09:34:02 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Column "ID" not found; SQL statement:
+SELECT * FROM AWS_Products WHERE ID = 'S GM' [42122-175]
+Wed Jan 24 09:38:43 AEDT 2018
+Database Sucessfully initialised
+Wed Jan 24 09:38:56 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (1, 1, '', 'Asphalt Laying Services') [42121-175]
+Wed Jan 24 09:38:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (1, 1, 1, 'Michelle', 'Michelle', '', '9672 4554') [42121-175]
+Wed Jan 24 09:38:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (2, 2, '', 'Archer Tippers') [42121-175]
+Wed Jan 24 09:38:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (2, 2, 2, 'Matt', 'Matt', '', '0412 654 701') [42121-175]
+Wed Jan 24 09:38:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (3, 3, '', 'Turps Tippers') [42121-175]
+Wed Jan 24 09:38:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (3, 3, 3, 'Ian ', 'Turner', 'turpstippers@yahoo.com.au', '0400 662 246') [42121-175]
+Wed Jan 24 09:38:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (4, 4, '', 'Burton Contractors') [42121-175]
+Wed Jan 24 09:38:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (4, 4, 4, 'Vijay', 'Arcot', '', '0409 951 524') [42121-175]
+Wed Jan 24 09:38:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (5, 5, '', 'JKW') [42121-175]
+Wed Jan 24 09:38:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (5, 5, 5, 'Jayse', 'Sui', '', '0437 928 754') [42121-175]
+Wed Jan 24 09:38:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (6, 6, '', 'Diona') [42121-175]
+Wed Jan 24 09:38:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (6, 6, 6, 'Brett', 'Vanderlight', '', '0428 420 549') [42121-175]
+Wed Jan 24 09:38:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (7, 7, '', 'Steward Coobms') [42121-175]
+Wed Jan 24 09:38:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (7, 7, 7, 'Steward', 'Coobms', '', '0408 581 227') [42121-175]
+Wed Jan 24 09:38:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (8, 8, '', 'Asbestos REM') [42121-175]
+Wed Jan 24 09:38:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (8, 8, 8, 'Wade ', 'Rogers', '', '0420 978 737') [42121-175]
+Wed Jan 24 09:38:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (9, 9, '', 'Ward Civil') [42121-175]
+Wed Jan 24 09:38:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (9, 9, 9, 'Alex', 'Mountakis', '', '0418 485 330') [42121-175]
+Wed Jan 24 09:38:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (10, 10, '', 'COD Duncan Mc Killop') [42121-175]
+Wed Jan 24 09:38:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (10, 10, 10, 'Duncan', 'Mc Killop', '', '0411 097 738') [42121-175]
+Wed Jan 24 09:38:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (11, 11, '', 'WCX M5') [42121-175]
+Wed Jan 24 09:38:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (11, 11, 11, 'Brian', 'Donohue', '', '0436 012 507') [42121-175]
+Wed Jan 24 09:38:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (12, 12, '', 'Veljohn') [42121-175]
+Wed Jan 24 09:38:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (12, 12, 12, 'Daniel ', 'Vella', '', '0437 323 628') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (13, 13, '', 'BTS') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (13, 13, 13, 'Anne ', 'Bostock', '', '0403 561 234') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (14, 14, '', 'North Shore Paving') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (14, 14, 14, 'Gaye', 'Lewin', '', '9416 0100') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (15, 15, '', 'Ford Civil') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (15, 15, 15, 'Robert', 'Browne', '', '0403 265 468') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (16, 16, '', 'WEM') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (16, 16, 16, 'Tvrtko', 'Tepic', '', '0433 454 950') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (17, 17, '', 'Attcall') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (17, 17, 17, 'Jordan', 'Kenyon', '', '0410 568 683') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (18, 18, '', 'NRT') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (18, 18, 18, 'Michaela ', 'Hodson', '', '0427 400 832') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (19, 19, '', 'BTS') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (19, 19, 19, 'Anne', 'Bostock', '', '0403 561 234') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (20, 20, '', 'BTS') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (20, 20, 20, 'Anne', 'Bostock', '', '0403 561 234') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (21, 21, '', 'Haslin') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (21, 21, 21, 'William', 'Huynh', '', '8522 3900') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (22, 22, '', 'BMD') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (22, 22, 22, 'Boa', 'Nguyen', '', '0417 705 969') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (23, 23, '', 'Antoun Civil') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (23, 23, 23, 'Nelson', 'Wong', '', '0419 314 131') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (24, 24, '', 'Skipmaster/Dartanyon') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (24, 24, 24, 'Greg', 'Kellner', '', '0416 191 799') [42121-175]
+Wed Jan 24 09:38:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (25, 25, '', 'Nepean Landscapes') [42121-175]
+Wed Jan 24 09:38:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (25, 25, 25, 'Christian', 'Wheatley', '', '0416 052 153') [42121-175]
+Wed Jan 24 09:38:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (26, 26, '', 'Abbca Developments') [42121-175]
+Wed Jan 24 09:38:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (26, 26, 26, 'Joe', 'Joe', '', '0414 973 118') [42121-175]
+Wed Jan 24 09:38:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (27, 27, '', 'Holdmark Constructions') [42121-175]
+Wed Jan 24 09:38:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (27, 27, 27, 'Tony', 'Tony', '', '98895540') [42121-175]
+Wed Jan 24 09:38:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (28, 28, '', 'Haines Bros') [42121-175]
+Wed Jan 24 09:38:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (28, 28, 28, 'Tolga', 'Cengiz', '', '47748899') [42121-175]
+Wed Jan 24 09:38:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (29, 29, '', 'Schembris Earthmoving') [42121-175]
+Wed Jan 24 09:38:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (29, 29, 29, 'Charlie', 'Schembri', '', '?') [42121-175]
+Wed Jan 24 09:38:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (30, 30, '', 'Pace Eathworks') [42121-175]
+Wed Jan 24 09:38:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (30, 30, 30, 'Craig', 'Pace', '', '0415 914 776') [42121-175]
+Wed Jan 24 09:38:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (31, 31, '', 'AGH') [42121-175]
+Wed Jan 24 09:38:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (31, 31, 31, 'Emily', 'Emily', '', '62990323') [42121-175]
+Wed Jan 24 09:38:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (32, 32, 23, 'Joe', 'Diaz', '', '0419 938 247') [42121-175]
+Wed Jan 24 09:38:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (32, 32, '', 'Codmah') [42121-175]
+Wed Jan 24 09:38:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (33, 33, 32, 'Andy', 'Saunders', '', '0413 215 788') [42121-175]
+Wed Jan 24 09:38:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (33, 33, '', 'M Collins') [42121-175]
+Wed Jan 24 09:38:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (34, 34, 33, 'Nicole ', 'Pearce', '', '0419 297 107') [42121-175]
+Wed Jan 24 09:38:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (1, 1, '123123', 'LukasDulka') [42121-175]
+Wed Jan 24 09:38:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (1, 1, 1, 'Lukas', 'Dulka', 'lukas.dulka@gmail.com', '0434261391') [42121-175]
+Wed Jan 24 09:39:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Column "ID" not found; SQL statement:
+SELECT * FROM AWS_Products WHERE ID = 'S GM' [42122-175]
+Wed Jan 24 10:07:55 AEDT 2018
+Database Sucessfully initialised
+Wed Jan 24 10:08:10 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (1, 1, '', 'Asphalt Laying Services') [42121-175]
+Wed Jan 24 10:08:10 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (1, 1, 1, 'Michelle', 'Michelle', '', '9672 4554') [42121-175]
+Wed Jan 24 10:08:10 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (2, 2, '', 'Archer Tippers') [42121-175]
+Wed Jan 24 10:08:10 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (2, 2, 2, 'Matt', 'Matt', '', '0412 654 701') [42121-175]
+Wed Jan 24 10:08:10 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (3, 3, '', 'Turps Tippers') [42121-175]
+Wed Jan 24 10:08:10 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (3, 3, 3, 'Ian ', 'Turner', 'turpstippers@yahoo.com.au', '0400 662 246') [42121-175]
+Wed Jan 24 10:08:10 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (4, 4, '', 'Burton Contractors') [42121-175]
+Wed Jan 24 10:08:10 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (4, 4, 4, 'Vijay', 'Arcot', '', '0409 951 524') [42121-175]
+Wed Jan 24 10:08:10 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (5, 5, '', 'JKW') [42121-175]
+Wed Jan 24 10:08:10 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (5, 5, 5, 'Jayse', 'Sui', '', '0437 928 754') [42121-175]
+Wed Jan 24 10:08:10 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (6, 6, '', 'Diona') [42121-175]
+Wed Jan 24 10:08:10 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (6, 6, 6, 'Brett', 'Vanderlight', '', '0428 420 549') [42121-175]
+Wed Jan 24 10:08:10 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (7, 7, '', 'Steward Coobms') [42121-175]
+Wed Jan 24 10:08:10 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (7, 7, 7, 'Steward', 'Coobms', '', '0408 581 227') [42121-175]
+Wed Jan 24 10:08:10 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (8, 8, '', 'Asbestos REM') [42121-175]
+Wed Jan 24 10:08:10 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (8, 8, 8, 'Wade ', 'Rogers', '', '0420 978 737') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (9, 9, '', 'Ward Civil') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (9, 9, 9, 'Alex', 'Mountakis', '', '0418 485 330') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (10, 10, '', 'COD Duncan Mc Killop') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (10, 10, 10, 'Duncan', 'Mc Killop', '', '0411 097 738') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (11, 11, '', 'WCX M5') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (11, 11, 11, 'Brian', 'Donohue', '', '0436 012 507') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (12, 12, '', 'Veljohn') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (12, 12, 12, 'Daniel ', 'Vella', '', '0437 323 628') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (13, 13, '', 'BTS') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (13, 13, 13, 'Anne ', 'Bostock', '', '0403 561 234') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (14, 14, '', 'North Shore Paving') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (14, 14, 14, 'Gaye', 'Lewin', '', '9416 0100') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (15, 15, '', 'Ford Civil') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (15, 15, 15, 'Robert', 'Browne', '', '0403 265 468') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (16, 16, '', 'WEM') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (16, 16, 16, 'Tvrtko', 'Tepic', '', '0433 454 950') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (17, 17, '', 'Attcall') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (17, 17, 17, 'Jordan', 'Kenyon', '', '0410 568 683') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (18, 18, '', 'NRT') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (18, 18, 18, 'Michaela ', 'Hodson', '', '0427 400 832') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (19, 19, '', 'BTS') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (19, 19, 19, 'Anne', 'Bostock', '', '0403 561 234') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (20, 20, '', 'BTS') [42121-175]
+Wed Jan 24 10:08:11 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (20, 20, 20, 'Anne', 'Bostock', '', '0403 561 234') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (21, 21, '', 'Haslin') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (21, 21, 21, 'William', 'Huynh', '', '8522 3900') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (22, 22, '', 'BMD') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (22, 22, 22, 'Boa', 'Nguyen', '', '0417 705 969') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (23, 23, '', 'Antoun Civil') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (23, 23, 23, 'Nelson', 'Wong', '', '0419 314 131') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (24, 24, '', 'Skipmaster/Dartanyon') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (24, 24, 24, 'Greg', 'Kellner', '', '0416 191 799') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (25, 25, '', 'Nepean Landscapes') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (25, 25, 25, 'Christian', 'Wheatley', '', '0416 052 153') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (26, 26, '', 'Abbca Developments') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (26, 26, 26, 'Joe', 'Joe', '', '0414 973 118') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (27, 27, '', 'Holdmark Constructions') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (27, 27, 27, 'Tony', 'Tony', '', '98895540') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (28, 28, '', 'Haines Bros') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (28, 28, 28, 'Tolga', 'Cengiz', '', '47748899') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (29, 29, '', 'Schembris Earthmoving') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (29, 29, 29, 'Charlie', 'Schembri', '', '?') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (30, 30, '', 'Pace Eathworks') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (30, 30, 30, 'Craig', 'Pace', '', '0415 914 776') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (31, 31, '', 'AGH') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (31, 31, 31, 'Emily', 'Emily', '', '62990323') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (32, 32, 23, 'Joe', 'Diaz', '', '0419 938 247') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (32, 32, '', 'Codmah') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (33, 33, 32, 'Andy', 'Saunders', '', '0413 215 788') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (33, 33, '', 'M Collins') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (34, 34, 33, 'Nicole ', 'Pearce', '', '0419 297 107') [42121-175]
+Wed Jan 24 10:08:12 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (1, 1, '123123', 'LukasDulka') [42121-175]
+Wed Jan 24 10:08:13 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (1, 1, 1, 'Lukas', 'Dulka', 'lukas.dulka@gmail.com', '0434261391') [42121-175]
+Wed Jan 24 10:08:13 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Column "ID" not found; SQL statement:
+SELECT * FROM AWS_Products WHERE ID = 'S GM' [42122-175]
+Wed Jan 24 10:09:31 AEDT 2018
+Database Sucessfully initialised
+Wed Jan 24 10:09:47 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (1, 1, '', 'Asphalt Laying Services') [42121-175]
+Wed Jan 24 10:09:47 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (1, 1, 1, 'Michelle', 'Michelle', '', '9672 4554') [42121-175]
+Wed Jan 24 10:09:47 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (2, 2, '', 'Archer Tippers') [42121-175]
+Wed Jan 24 10:09:47 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (2, 2, 2, 'Matt', 'Matt', '', '0412 654 701') [42121-175]
+Wed Jan 24 10:09:47 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (3, 3, '', 'Turps Tippers') [42121-175]
+Wed Jan 24 10:09:47 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (3, 3, 3, 'Ian ', 'Turner', 'turpstippers@yahoo.com.au', '0400 662 246') [42121-175]
+Wed Jan 24 10:09:47 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (4, 4, '', 'Burton Contractors') [42121-175]
+Wed Jan 24 10:09:47 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (4, 4, 4, 'Vijay', 'Arcot', '', '0409 951 524') [42121-175]
+Wed Jan 24 10:09:47 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (5, 5, '', 'JKW') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (5, 5, 5, 'Jayse', 'Sui', '', '0437 928 754') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (6, 6, '', 'Diona') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (6, 6, 6, 'Brett', 'Vanderlight', '', '0428 420 549') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (7, 7, '', 'Steward Coobms') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (7, 7, 7, 'Steward', 'Coobms', '', '0408 581 227') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (8, 8, '', 'Asbestos REM') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (8, 8, 8, 'Wade ', 'Rogers', '', '0420 978 737') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (9, 9, '', 'Ward Civil') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (9, 9, 9, 'Alex', 'Mountakis', '', '0418 485 330') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (10, 10, '', 'COD Duncan Mc Killop') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (10, 10, 10, 'Duncan', 'Mc Killop', '', '0411 097 738') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (11, 11, '', 'WCX M5') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (11, 11, 11, 'Brian', 'Donohue', '', '0436 012 507') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (12, 12, '', 'Veljohn') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (12, 12, 12, 'Daniel ', 'Vella', '', '0437 323 628') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (13, 13, '', 'BTS') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (13, 13, 13, 'Anne ', 'Bostock', '', '0403 561 234') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (14, 14, '', 'North Shore Paving') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (14, 14, 14, 'Gaye', 'Lewin', '', '9416 0100') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (15, 15, '', 'Ford Civil') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (15, 15, 15, 'Robert', 'Browne', '', '0403 265 468') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (16, 16, '', 'WEM') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (16, 16, 16, 'Tvrtko', 'Tepic', '', '0433 454 950') [42121-175]
+Wed Jan 24 10:09:48 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (17, 17, '', 'Attcall') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (17, 17, 17, 'Jordan', 'Kenyon', '', '0410 568 683') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (18, 18, '', 'NRT') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (18, 18, 18, 'Michaela ', 'Hodson', '', '0427 400 832') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (19, 19, '', 'BTS') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (19, 19, 19, 'Anne', 'Bostock', '', '0403 561 234') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (20, 20, '', 'BTS') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (20, 20, 20, 'Anne', 'Bostock', '', '0403 561 234') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (21, 21, '', 'Haslin') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (21, 21, 21, 'William', 'Huynh', '', '8522 3900') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (22, 22, '', 'BMD') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (22, 22, 22, 'Boa', 'Nguyen', '', '0417 705 969') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (23, 23, '', 'Antoun Civil') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (23, 23, 23, 'Nelson', 'Wong', '', '0419 314 131') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (24, 24, '', 'Skipmaster/Dartanyon') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (24, 24, 24, 'Greg', 'Kellner', '', '0416 191 799') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (25, 25, '', 'Nepean Landscapes') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (25, 25, 25, 'Christian', 'Wheatley', '', '0416 052 153') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (26, 26, '', 'Abbca Developments') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (26, 26, 26, 'Joe', 'Joe', '', '0414 973 118') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (27, 27, '', 'Holdmark Constructions') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (27, 27, 27, 'Tony', 'Tony', '', '98895540') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (28, 28, '', 'Haines Bros') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (28, 28, 28, 'Tolga', 'Cengiz', '', '47748899') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (29, 29, '', 'Schembris Earthmoving') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (29, 29, 29, 'Charlie', 'Schembri', '', '?') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (30, 30, '', 'Pace Eathworks') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (30, 30, 30, 'Craig', 'Pace', '', '0415 914 776') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (31, 31, '', 'AGH') [42121-175]
+Wed Jan 24 10:09:49 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (31, 31, 31, 'Emily', 'Emily', '', '62990323') [42121-175]
+Wed Jan 24 10:09:50 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (32, 32, 23, 'Joe', 'Diaz', '', '0419 938 247') [42121-175]
+Wed Jan 24 10:09:50 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (32, 32, '', 'Codmah') [42121-175]
+Wed Jan 24 10:09:50 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (33, 33, 32, 'Andy', 'Saunders', '', '0413 215 788') [42121-175]
+Wed Jan 24 10:09:50 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (33, 33, '', 'M Collins') [42121-175]
+Wed Jan 24 10:09:50 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (34, 34, 33, 'Nicole ', 'Pearce', '', '0419 297 107') [42121-175]
+Wed Jan 24 10:09:50 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (1, 1, '123123', 'LukasDulka') [42121-175]
+Wed Jan 24 10:09:50 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (1, 1, 1, 'Lukas', 'Dulka', 'lukas.dulka@gmail.com', '0434261391') [42121-175]
+Wed Jan 24 10:09:50 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Column "ID" not found; SQL statement:
+SELECT * FROM AWS_Products WHERE ID = 'S GM' [42122-175]
+Wed Jan 24 10:12:23 AEDT 2018
+Database Sucessfully initialised
+Wed Jan 24 10:13:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (1, 1, '', 'Asphalt Laying Services') [42121-175]
+Wed Jan 24 10:13:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (1, 1, 1, 'Michelle', 'Michelle', '', '9672 4554') [42121-175]
+Wed Jan 24 10:13:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (2, 2, '', 'Archer Tippers') [42121-175]
+Wed Jan 24 10:13:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (2, 2, 2, 'Matt', 'Matt', '', '0412 654 701') [42121-175]
+Wed Jan 24 10:13:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (3, 3, '', 'Turps Tippers') [42121-175]
+Wed Jan 24 10:13:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (3, 3, 3, 'Ian ', 'Turner', 'turpstippers@yahoo.com.au', '0400 662 246') [42121-175]
+Wed Jan 24 10:13:57 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (4, 4, '', 'Burton Contractors') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (4, 4, 4, 'Vijay', 'Arcot', '', '0409 951 524') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (5, 5, '', 'JKW') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (5, 5, 5, 'Jayse', 'Sui', '', '0437 928 754') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (6, 6, '', 'Diona') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (6, 6, 6, 'Brett', 'Vanderlight', '', '0428 420 549') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (7, 7, '', 'Steward Coobms') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (7, 7, 7, 'Steward', 'Coobms', '', '0408 581 227') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (8, 8, '', 'Asbestos REM') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (8, 8, 8, 'Wade ', 'Rogers', '', '0420 978 737') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (9, 9, '', 'Ward Civil') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (9, 9, 9, 'Alex', 'Mountakis', '', '0418 485 330') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (10, 10, '', 'COD Duncan Mc Killop') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (10, 10, 10, 'Duncan', 'Mc Killop', '', '0411 097 738') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (11, 11, '', 'WCX M5') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (11, 11, 11, 'Brian', 'Donohue', '', '0436 012 507') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (12, 12, '', 'Veljohn') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (12, 12, 12, 'Daniel ', 'Vella', '', '0437 323 628') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (13, 13, '', 'BTS') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (13, 13, 13, 'Anne ', 'Bostock', '', '0403 561 234') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (14, 14, '', 'North Shore Paving') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (14, 14, 14, 'Gaye', 'Lewin', '', '9416 0100') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (15, 15, '', 'Ford Civil') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (15, 15, 15, 'Robert', 'Browne', '', '0403 265 468') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (16, 16, '', 'WEM') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (16, 16, 16, 'Tvrtko', 'Tepic', '', '0433 454 950') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (17, 17, '', 'Attcall') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (17, 17, 17, 'Jordan', 'Kenyon', '', '0410 568 683') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (18, 18, '', 'NRT') [42121-175]
+Wed Jan 24 10:13:58 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (18, 18, 18, 'Michaela ', 'Hodson', '', '0427 400 832') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (19, 19, '', 'BTS') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (19, 19, 19, 'Anne', 'Bostock', '', '0403 561 234') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (20, 20, '', 'BTS') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (20, 20, 20, 'Anne', 'Bostock', '', '0403 561 234') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (21, 21, '', 'Haslin') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (21, 21, 21, 'William', 'Huynh', '', '8522 3900') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (22, 22, '', 'BMD') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (22, 22, 22, 'Boa', 'Nguyen', '', '0417 705 969') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (23, 23, '', 'Antoun Civil') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (23, 23, 23, 'Nelson', 'Wong', '', '0419 314 131') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (24, 24, '', 'Skipmaster/Dartanyon') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (24, 24, 24, 'Greg', 'Kellner', '', '0416 191 799') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (25, 25, '', 'Nepean Landscapes') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (25, 25, 25, 'Christian', 'Wheatley', '', '0416 052 153') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (26, 26, '', 'Abbca Developments') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (26, 26, 26, 'Joe', 'Joe', '', '0414 973 118') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (27, 27, '', 'Holdmark Constructions') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (27, 27, 27, 'Tony', 'Tony', '', '98895540') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (28, 28, '', 'Haines Bros') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (28, 28, 28, 'Tolga', 'Cengiz', '', '47748899') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (29, 29, '', 'Schembris Earthmoving') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (29, 29, 29, 'Charlie', 'Schembri', '', '?') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (30, 30, '', 'Pace Eathworks') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (30, 30, 30, 'Craig', 'Pace', '', '0415 914 776') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (31, 31, '', 'AGH') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (31, 31, 31, 'Emily', 'Emily', '', '62990323') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (32, 32, 23, 'Joe', 'Diaz', '', '0419 938 247') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (32, 32, '', 'Codmah') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (33, 33, 32, 'Andy', 'Saunders', '', '0413 215 788') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (33, 33, '', 'M Collins') [42121-175]
+Wed Jan 24 10:13:59 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (34, 34, 33, 'Nicole ', 'Pearce', '', '0419 297 107') [42121-175]
+Wed Jan 24 10:14:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Clients (ID, `ID`, `GlobeID`, `ClientName`) VALUES (1, 1, '123123', 'LukasDulka') [42121-175]
+Wed Jan 24 10:14:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ID"; SQL statement:
+INSERT INTO QR_Contacts (ID, `ID`, `ClientID`, `Name`, `LastName`, `email`, `phone`) VALUES (1, 1, 1, 'Lukas', 'Dulka', 'lukas.dulka@gmail.com', '0434261391') [42121-175]
+Wed Jan 24 10:14:00 AEDT 2018
+org.h2.jdbc.JdbcSQLException: Column "ID" not found; SQL statement:
+SELECT * FROM AWS_Products WHERE ID = 'S GM' [42122-175]
+Wed Jan 24 10:24:37 AEDT 2018
+java.lang.ClassNotFoundException: org.h2.Driver

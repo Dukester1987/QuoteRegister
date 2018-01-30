@@ -42,8 +42,8 @@ import org.jdesktop.swingx.treetable.TreeTableNode;
  */
 public class TreeTableWrapper {
    
-    private String[] headings = {"ID", "jobID", "RateID", "TransID", "Status", "Verbal Quote", "Date", "Start Date", "End Date", "Client", "Delivery","Contact Details","Product Code","Volume", "Delivery Type", "Total Price ex GST", "Material Cost", "Transport Rate", "Special projects", "Comments"};    
-    private Class<?>[] columnTypes = { String.class, Integer.class, String.class, String.class,String.class, String.class, Date.class, Date.class, Date.class, String.class, String.class, String.class, String.class, Double.class, String.class, Double.class, Double.class, Double.class, Double.class, String.class};
+    private String[] headings = {"ID", "jobID", "RateID", "TransID", "Status", "Verbal Quote", "Date", "Start Date", "End Date", "Client", "Delivery","Contact Details","Product Code","Volume", "Delivery Type", "Total Price ex GST", "Material Cost", "Transport Rate", "Special projects", "Comments", "suffix"};    
+    private Class<?>[] columnTypes = { String.class, Integer.class, String.class, String.class,String.class, String.class, Date.class, Date.class, Date.class, String.class, String.class, String.class, String.class, Double.class, String.class, Double.class, Double.class, Double.class, Double.class, String.class, String.class};
     private Node root;
     private TreeTableModel model;
     private JXTreeTable table = null;
@@ -168,9 +168,10 @@ public class TreeTableWrapper {
     }
 
     public void hideIDColumns() {
+        table.removeColumn(table.getColumnModel().getColumn(20));
         table.removeColumn(table.getColumnModel().getColumn(1));
         table.removeColumn(table.getColumnModel().getColumn(1));
-        table.removeColumn(table.getColumnModel().getColumn(1));
+        table.removeColumn(table.getColumnModel().getColumn(1));        
     }
    
     private ChildNode getNodeFromSelectedRow(int[] selectedRows) {
@@ -316,6 +317,7 @@ public class TreeTableWrapper {
                 }
             }   
             table.expandAll();
+            table.packAll();            
         } catch(Exception e) {
             System.out.println(e.toString());
         }               

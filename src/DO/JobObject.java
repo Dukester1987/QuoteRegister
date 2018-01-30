@@ -7,8 +7,6 @@ package DO;
 
 import DBO.User;
 import java.sql.Date;
-import localDB.LocalWraper;
-import quoteregister.Gui;
 
 /**
  *
@@ -17,6 +15,7 @@ import quoteregister.Gui;
 public class JobObject extends AbstractDatabaseObject{
     
     private int jobID;
+    private String suffix, oldSuffix;
     private User user;
     private String quote, status, notes;    
     private Date dateQuoted, startDate, endDate;    
@@ -27,9 +26,18 @@ public class JobObject extends AbstractDatabaseObject{
     private int oldJobID;
     private boolean internal;
 
-    public JobObject(int jobID, User user, String quote, String status, Date dateQuoted, Date startDate, Date endDate, ClientObject client, ContactObject contact, AddressObject address, String notes, String WANID, Boolean internal) {
-        editObject(jobID, user, quote, status, dateQuoted, startDate, endDate, client, contact, address, notes, WANID, internal);
+    public JobObject(int jobID, User user, String quote, String status, Date dateQuoted, Date startDate, Date endDate, ClientObject client, ContactObject contact, AddressObject address, String notes, String WANID, Boolean internal, String suffix) {
+        editObject(jobID, user, quote, status, dateQuoted, startDate, endDate, client, contact, address, notes, WANID, internal, suffix);
         this.oldJobID = jobID;
+        this.oldSuffix = suffix;
+    }
+
+    public String getOldSuffix() {
+        return oldSuffix;
+    }
+
+    public void setOldSuffix(String oldSuffix) {
+        this.oldSuffix = oldSuffix;
     }
     
     public void setOldJobID(int ID){
@@ -88,6 +96,14 @@ public class JobObject extends AbstractDatabaseObject{
         this.dateQuoted = dateQuoted;
     }
 
+    public String getSuffix() {
+        return suffix;
+    }
+
+    public void setSuffix(String suffix) {
+        this.suffix = suffix;
+    }
+
     public Date getStartDate() {
         return startDate;
     }
@@ -129,7 +145,8 @@ public class JobObject extends AbstractDatabaseObject{
     }
     
     public String getJobConst(){
-        return user.getName().substring(0,1)+user.getLastName().substring(0,1)+"-"+getJobID();
+        String sfx = suffix.isEmpty()?"":"-"+suffix;
+        return user.getName().substring(0,1)+user.getLastName().substring(0,1)+"-"+getJobID()+sfx;
     }
 
     public boolean isInternal() {
@@ -153,12 +170,14 @@ public class JobObject extends AbstractDatabaseObject{
             getAddress(),
             getContact(),
             null,null,null,null,null,null,null,
-            getNotes()};
+            getNotes(),
+            getSuffix()};
         return obj;
     }
 
-    public void editObject(int jobID, User user, String quote, String status, Date dateQuoted, Date startDate, Date endDate, ClientObject client, ContactObject contact, AddressObject address, String notes, String WANID, boolean internal) {
+    public void editObject(int jobID, User user, String quote, String status, Date dateQuoted, Date startDate, Date endDate, ClientObject client, ContactObject contact, AddressObject address, String notes, String WANID, boolean internal, String suffix) {
         this.jobID = jobID;        
+        this.suffix = suffix;
         this.user = user;
         this.quote = quote;
         this.status = status;
@@ -185,6 +204,7 @@ public class JobObject extends AbstractDatabaseObject{
     public Object[][] getDBObject() {
         return new Object[][]{
             {"ID",
+            "suffix",
             "UserID",
             "DateQuoted",
             "StartDate",
@@ -201,6 +221,7 @@ public class JobObject extends AbstractDatabaseObject{
             "State",
             "Internal"},
             {getJobID(),
+            getSuffix(),
             getUser().getId(),
             getDateQuoted(),
             getStartDate(),
@@ -249,7 +270,7 @@ public class JobObject extends AbstractDatabaseObject{
     @Override
     public Object[][] getDBWhere() {
         return new Object[][]{
-            {"ID","UserID"},{"=","="},{getOldJobID(),user.getId()},{"AND","AND"}
+            {"ID","UserID","suffix"},{"=","=","="},{getOldJobID(),user.getId(),getOldSuffix()},{"AND","AND","AND"}
         };
     } 
     
@@ -264,11 +285,12 @@ public class JobObject extends AbstractDatabaseObject{
         if(this.oldJobID!=this.jobID){
             //log changes into DB
             int id = ObjectCollector.getNextIDForJobIDChanges();            
-            JobIDChange jib = new JobIDChange(id, oldJobID, jobID, false);
+            JobIDChange jib = new JobIDChange(id, oldJobID, jobID, suffix, oldSuffix, false);
             ObjectCollector.addJobIDChange(jib);
             jib.dbSave();
         }
         this.oldJobID = this.jobID;
+        this.oldSuffix = this.suffix;
     }
     
     

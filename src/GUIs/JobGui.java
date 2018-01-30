@@ -20,6 +20,7 @@ import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import org.jdesktop.swingx.JXTreeTable;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
+import org.jdesktop.swingx.prompt.PromptSupport;
 import org.jdesktop.swingx.treetable.DefaultTreeTableModel;
 import quoteregister.Gui;
 import quoteregister.GuiIcon;
@@ -109,6 +110,7 @@ public class JobGui extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         Internal = new javax.swing.JCheckBox();
         jSpinner1 = new javax.swing.JSpinner();
+        suffix = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -196,8 +198,9 @@ public class JobGui extends javax.swing.JFrame {
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, -1));
 
         Internal.setText("Internal");
-        jPanel1.add(Internal, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, -1, -1));
+        jPanel1.add(Internal, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, -1, -1));
         jPanel1.add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, -1, -1));
+        jPanel1.add(suffix, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, 50, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/ok16.png"))); // NOI18N
         jButton1.setText("Insert");
@@ -328,18 +331,15 @@ public class JobGui extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -463,22 +463,31 @@ public class JobGui extends javax.swing.JFrame {
     private javax.swing.JTextArea notes;
     private com.toedter.calendar.JDateChooser startDate;
     private javax.swing.JComboBox<String> status;
+    private javax.swing.JTextField suffix;
     private javax.swing.JComboBox<String> verbalQuotes;
     // End of variables declaration//GEN-END:variables
 
     private void prepareNewJobObject() throws Exception {
         //let magic happened
         
+        writeDown = Functions.checkIntForTextField(JobID);                
+        
         if(!writeDown)
             throw new Exception("Job ID must be a number");        
         
         String Quotes = verbalQuotes.getSelectedItem().toString();        
-        newID = Integer.parseInt(JobID.getText());            
-        if(ObjectCollector.getJobByID(newID) != null){
-            if(Job==null || Job.getJobID()!=newID){            
-                throw new Exception("Job with this number already exists in DB");
+        newID = Integer.parseInt(JobID.getText());    
+        List<JobObject> jobs = ObjectCollector.getJobs();
+        if(jobs.stream().anyMatch(p -> p.getJobID()==newID)){
+            System.out.println("okay there is another match for this Job ID");
+            if(jobs.stream().anyMatch(p -> p.getSuffix().equalsIgnoreCase(suffix.getText()))){
+                System.out.println("okay there is also suffix for this JobID exists in a database");
+                System.out.println("JobID of eddited JOB IS:");
+                if(Job==null || Job.getOldJobID()!=newID || !Job.getOldSuffix().equalsIgnoreCase(suffix.getText())){              
+                    throw new Exception("Job with this number already exists in DB");
+                }
             }
-        }
+        }         
         
         ClientObject Client = (ClientObject) client.getSelectedItem();
         if(Client==null)
@@ -489,7 +498,7 @@ public class JobGui extends javax.swing.JFrame {
             throw new Exception("Contact needs to be set");
         
         if(Contact.getClientID()!=Client.getID())
-            throw new Exception("Selected contact doesn't belong to the client");
+            throw new Exception("Selected contact doesn't belong to the client "+Contact.getClientID()+" "+Client.getID());
         
         if(WANID_MANDATORY && WANID.getText().isEmpty())
             throw new Exception("WAN ID needs to be set when Status is approved");
@@ -503,6 +512,7 @@ public class JobGui extends javax.swing.JFrame {
         String Status = this.status.getSelectedItem().toString();        
         String username = Gui.getDB().userData.getLoginName().substring(0, 2)+"-"+newID;           
         String WANID = this.WANID.getText();
+        String sfx = this.suffix.getText();
         
         //Create JobObject
         if(Job!=null) {
@@ -526,11 +536,11 @@ public class JobGui extends javax.swing.JFrame {
                     throw new Exception("Products are incompatible, please edit product first!");
                 }
             }                        
-            Job.editObject(newID, Job.getUser(), Quotes, Status, dateQuoted, startDate, endDate, Client, Contact, Delivery, Notes, WANID,Internal.isSelected());
+            Job.editObject(newID, Job.getUser(), Quotes, Status, dateQuoted, startDate, endDate, Client, Contact, Delivery, Notes, WANID,Internal.isSelected(),sfx);
             Job.dbUpdate();            
         } else {      
             System.out.println("saving job user is: "+jobOwner.getSelectedItem());
-            Job = new JobObject(newID, (User) jobOwner.getSelectedItem(), Quotes, Status, dateQuoted, startDate, endDate, Client, Contact, Delivery, Notes, WANID,Internal.isSelected());
+            Job = new JobObject(newID, (User) jobOwner.getSelectedItem(), Quotes, Status, dateQuoted, startDate, endDate, Client, Contact, Delivery, Notes, WANID,Internal.isSelected(),sfx);
             ObjectCollector.addJob(Job);
             System.out.println(newID);
             Job.dbSave();
@@ -540,9 +550,12 @@ public class JobGui extends javax.swing.JFrame {
 
     private void initValues() {                     
         newID = (int) getValue(1);
-        JobID.setText(Integer.toString(newID));
+        String sfix = (String) getValue(20);
+        
+        JobID.setText(Integer.toString(newID));        
         //JobID.setEnabled(false);
-        Job = ObjectCollector.getJobByID(newID);
+        Job = ObjectCollector.getJobByID(newID,sfix);
+        suffix.setText(Job.getSuffix());        
         status.setSelectedItem(Job.getStatus());
         jobOwner.setSelectedItem(Job.getUser());
         jobOwner.setEnabled(false);
@@ -581,6 +594,12 @@ public class JobGui extends javax.swing.JFrame {
         JobID.setText(Integer.toString(ObjectCollector.getNextJobID()));
         AutoCompleteDecorator.decorate(client);
         AutoCompleteDecorator.decorate(contact);
+        AutoCompleteDecorator.decorate(jobOwner);
+        PromptSupport.setPrompt("suffix", suffix);
+        PromptSupport.setPrompt("Street", Street);
+        PromptSupport.setPrompt("City", City);
+        PromptSupport.setPrompt("ZIP", Zip);
+        
         users = ObjectCollector.getUsersForList();        
         addUsersToDropDown(users,jobOwner);                
         refreshClients();        

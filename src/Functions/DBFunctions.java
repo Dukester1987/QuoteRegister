@@ -33,7 +33,8 @@ public class DBFunctions {
             int result = st.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);            
             ResultSet rs = st.getGeneratedKeys();
             if(rs.next()){
-                lastID = rs.getInt(1);
+                //lastID = rs.getInt(1);
+                lastID = getINT(rs.getString(1));                
                 //System.out.println("ID changed: "+lastID);
             }
                 
@@ -280,6 +281,15 @@ public class DBFunctions {
             new FileLogger(ex.toString());
         }
     }    
+
+    private int getINT(String string) {
+        int result = 0;
+        try{
+            return Integer.parseInt(string);
+        } catch(Exception e){
+            return result;
+        }
+    }
 
     
 }

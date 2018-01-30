@@ -8,6 +8,7 @@ package GUIs;
 import DO.ClientObject;
 import DO.ObjectCollector;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -198,6 +199,9 @@ public class NewClientGui extends javax.swing.JFrame {
         if(ClientName.getText().isEmpty())
             throw new Exception("Client needs to be set");
         
+        if(!checkClients(ClientName.getText()))
+            throw new Exception("Client already exists in a database");
+        
         if(co==null){
             co = new ClientObject(id, GlobeID.getText(), ClientName.getText());
             clients.add(co);
@@ -212,6 +216,7 @@ public class NewClientGui extends javax.swing.JFrame {
 
     private int getClientID() {
         clients = ObjectCollector.getClients();
+        clients.sort(Comparator.comparing(ClientObject::getID));
         if(clients.size()>0){
             return clients.get(clients.size()-1).getID();
         } else {
@@ -248,5 +253,9 @@ public class NewClientGui extends javax.swing.JFrame {
         ClientName.setText(co.getClientName());
         GlobeID.setText(co.getGlobeID());
         
+    }
+
+    private boolean checkClients(String client) {
+        return clients.stream().noneMatch(p -> p.getClientName().equalsIgnoreCase(client));
     }
 }

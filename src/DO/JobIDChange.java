@@ -14,16 +14,19 @@ import java.sql.Timestamp;
 public class JobIDChange extends AbstractDatabaseObject{
     
     private int ID, oldJobID, newJobID;
+    private String suffix, suffixOld;
     private boolean executed;
     
-    public JobIDChange(int ID, int OldJobID, int newJobID, boolean executed) {
-        this.editObject(ID,OldJobID,newJobID,executed);
+    public JobIDChange(int ID, int OldJobID, int newJobID, String suffix, String suffixOld, boolean executed) {
+        this.editObject(ID,OldJobID,newJobID,suffix,suffixOld,executed);
     }
     
-    private void editObject(int ID, int oldJobID, int newJobID, boolean executed) {
+    private void editObject(int ID, int OldJobID, int newJobID, String suffix, String suffixOld, boolean executed) {
         this.ID = ID;
-        this.oldJobID = oldJobID;
+        this.oldJobID = OldJobID;
         this.newJobID = newJobID;
+        this.suffix = suffix;
+        this.suffixOld = suffixOld;
         this.executed = executed;
     }    
 
@@ -34,6 +37,22 @@ public class JobIDChange extends AbstractDatabaseObject{
     public void setID(int ID) {
         this.ID = ID;
     }
+
+    public String getSuffix() {
+        return suffix;
+    }
+
+    public void setSuffix(String suffix) {
+        this.suffix = suffix;
+    }
+
+    public String getSuffixOld() {
+        return suffixOld;
+    }
+
+    public void setSuffixOld(String suffixOld) {
+        this.suffixOld = suffixOld;
+    }       
 
     public int getOldJobID() {
         return oldJobID;
@@ -65,10 +84,10 @@ public class JobIDChange extends AbstractDatabaseObject{
     public Object[][] getDBObject() {
         return new Object[][] {
                 {
-                    "ID","OldJobID","NewJobID","executed"
+                    "ID","OldJobID","NewJobID","suffix","suffixOld","executed"
                 },
                 {
-                    getID(),getOldJobID(),getNewJobID(),isExecuted()
+                    getID(),getOldJobID(),getNewJobID(),getSuffix(),getSuffixOld(),isExecuted()
                 }
         };
     }

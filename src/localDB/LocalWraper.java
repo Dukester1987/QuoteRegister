@@ -394,7 +394,7 @@ public class LocalWraper {
         //new dataCleaner(this);
     }
 
-    public void changeLog(String tbl, int ID, String insert, String inputs, int loginId) {
+    public void changeLog(String tbl, Object ID, String insert, String inputs, int loginId) {
         Gui.isSyncNeeded = true;
         System.err.println("isSyncNeeded is changing to now wtf???");
         try {
@@ -419,7 +419,7 @@ public class LocalWraper {
 
     public void dbDelete(String table, Object[][] where, String ID) {
         String conditions = "";
-        int updatedID = 0;
+        Object updatedID = 0;
         Object[] question = where[0];
         Object[] operand = where[1];
         Object[] answer = where[2];
@@ -433,8 +433,12 @@ public class LocalWraper {
             if(question[i].equals(ID)){
                 updatedID = (int) answer[i];
             }            
-        }
+        }        
 
+        if(!ID.isEmpty()){
+            updatedID = ID;
+        }
+        
         String query = String.format("DELETE FROM %s WHERE %s", table,conditions);
         executeQuery(query, "Deleted", false);
         changeLog(table, updatedID, "delete", query, userData.getId());                

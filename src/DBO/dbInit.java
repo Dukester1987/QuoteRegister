@@ -65,6 +65,7 @@ public class dbInit {
                         pr.getString("ZIP"),
                         pr.getString("State"));
                 ObjectCollector.addAWSAddress(address);
+                System.out.println(address.getStreet()+" "+address.getID());
             }
             say("---- DONE ----");
         } catch (SQLException ex) {
@@ -212,7 +213,8 @@ public class dbInit {
                         ,Delivery
                         ,pr.getString("Notes")
                         ,pr.getString("WANID")
-                        ,pr.getBoolean("internal"));
+                        ,pr.getBoolean("internal")
+                        ,pr.getString("suffix"));
                 ObjectCollector.addJob(tgO);
             }
             say("---- DONE ----");
@@ -256,7 +258,7 @@ public class dbInit {
         try {
             say("INIT QR_JobIDChange table");
             while(pr.next()) {
-                JobIDChange jic = new JobIDChange(pr.getInt("ID"), pr.getInt("OldJobID"), pr.getInt("NewJobID"), pr.getBoolean("executed"));
+                JobIDChange jic = new JobIDChange(pr.getInt("ID"), pr.getInt("OldJobID"), pr.getInt("NewJobID"), pr.getString("suffix"), pr.getString("suffixOld"), pr.getBoolean("executed"));
                 ObjectCollector.addJobIDChange(jic);
             }
             say("---- DONE ----");

@@ -230,6 +230,7 @@ public class addProductGui extends javax.swing.JFrame {
     private void initAddresses() {
         List<AWSAddressObject> Addresses = ObjectCollector.getAWSAddresses();
         for (AWSAddressObject Address : Addresses) {
+            System.out.println(Address.getID()+" "+Address.getStreet());
             AddressSelect.addItem(Address);
         }
     }
