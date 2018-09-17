@@ -169,7 +169,7 @@ public class JobObject extends AbstractDatabaseObject{
             getClient(),
             getAddress(),
             getContact(),
-            null,null,null,null,null,null,null,
+            null,null,null,null,null,null,null,null,
             getNotes(),
             getSuffix()};
         return obj;

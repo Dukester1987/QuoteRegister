@@ -458,14 +458,14 @@ public void dbDelete(String table, Object[][] where, int ID) {
             if(i<question.length-1){
                 conditions += delimiter[i] + " ";
             }    
-            if(question[i].equals(ID)){
+            if(question[i].equals("ID")){
                 updatedID = (int) answer[i];
             }            
         }
 
         String query = String.format("DELETE FROM %s WHERE %s", table,conditions);
         executeQuery(query, "Deleted", false);
-        changeLog(table, updatedID, "delete", query, userData.getId());                
+        changeLog(table, ID, "delete", query, userData.getId());                
         System.out.println(query);
     }    
 

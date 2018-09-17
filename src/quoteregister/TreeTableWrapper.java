@@ -42,8 +42,8 @@ import org.jdesktop.swingx.treetable.TreeTableNode;
  */
 public class TreeTableWrapper {
    
-    private String[] headings = {"ID", "jobID", "RateID", "TransID", "Status", "Verbal Quote", "Date", "Start Date", "End Date", "Client", "Delivery","Contact Details","Product Code","Volume", "Delivery Type", "Total Price ex GST", "Material Cost", "Transport Rate", "Special projects", "Comments", "suffix"};    
-    private Class<?>[] columnTypes = { String.class, Integer.class, String.class, String.class,String.class, String.class, Date.class, Date.class, Date.class, String.class, String.class, String.class, String.class, Double.class, String.class, Double.class, Double.class, Double.class, Double.class, String.class, String.class};
+    private String[] headings = {"ID", "jobID", "RateID", "TransID", "Status", "Verbal Quote", "Date", "Start Date", "End Date", "Client", "Delivery","Contact Details","Product Code","Volume", "Delivery Type", "Total Price ex GST", "Material Cost", "Transport Rate", "Special projects","External Tipping", "Comments", "suffix"};    
+    private Class<?>[] columnTypes = { String.class, Integer.class, String.class, String.class,String.class, String.class, Date.class, Date.class, Date.class, String.class, String.class, String.class, String.class, Double.class, String.class, Double.class, Double.class, Double.class, Double.class, Double.class, String.class, String.class};
     private Node root;
     private TreeTableModel model;
     private JXTreeTable table = null;
@@ -61,6 +61,8 @@ public class TreeTableWrapper {
     private addProductGui aProdGui;
     private String productFilter = "";
     private String rateFilter = "";
+    private Long endTime = 0L;
+    private long startTime;
     
     
     public TreeTableWrapper(){               
@@ -198,16 +200,18 @@ public class TreeTableWrapper {
 
     public void editSelectedRow(int[] selectedRows) {
         int nodeLevel = getNodeLevel(selectedRows[0]);
-        System.out.println(nodeLevel);
-        
+        System.out.println(nodeLevel);        
         switch(nodeLevel){
-            case 2: //editing job            
-                editJob(selectedRows[0]);
+            case 2: //editing job        
+                System.out.println("editing job");
+                editJob(selectedRows[0]);                
                 break;
             case 3: //editing product
-                editProduct(selectedRows);
+                System.out.println("editing product");
+                editProduct(selectedRows);                
                 break;
             case 4: //editing rate
+                System.out.println("editing rate");
                 editRate(selectedRows);
                 break;
             default: // do nothing
@@ -252,9 +256,9 @@ public class TreeTableWrapper {
     }     
 
     private void editJob(int selectedRow) {
-        if(!Functions.isGuiShowing(ejGui)){
-            ejGui = new JobGui(this, selectedRow);
-            Functions.createModalGui(ejGui);
+        if(!Functions.isGuiShowing(ejGui)){            
+            ejGui = new JobGui(this, selectedRow);            
+            Functions.createModalGui(ejGui);            
         }
     }
 
@@ -304,7 +308,7 @@ public class TreeTableWrapper {
                 ChildNode jobNode = new ChildNode(job.getTreeTableObject());
                 model.insertNodeInto(jobNode, root, 0);                        
 
-                List<ProductAllObject> products = ObjectCollector.getProductAllByJobID(job.getJobID());
+                List<ProductAllObject> products = ObjectCollector.getProductAllByJobID(job.getJobID(), job.getSuffix());
                 for (ProductAllObject product : products) {
                     ChildNode productNode = new ChildNode(product.getTableObject());
                     model.insertNodeInto(productNode, jobNode, 0);
@@ -337,6 +341,12 @@ public class TreeTableWrapper {
         } else {
             jobs = ObjectCollector.getJobsByStatus(activeFilter);
         }  
+        
+        //if user have specific right it will be used here and filtered        
+        if(db.userData.hasRights("restriction", "salesMyself")){
+            jobs = jobs.stream().filter(s -> s.getUser().getId()==db.userData.getId()).collect(Collectors.toList());
+            System.out.println("FILTERING JOBS FOR USER "+db.userData.getName());
+        }
                 
         if(textFilter.isEmpty() && productFilter.isEmpty() && rateFilter.isEmpty()){
             return jobs;            
@@ -384,12 +394,14 @@ public class TreeTableWrapper {
     
     private void deleteJob(int selectedRow) {
         JobObject job = getJobByRow(selectedRow);
-        List<ProductAllObject> allocatedProducts = ObjectCollector.getProductAllByJobID(job.getJobID());
+        List<ProductAllObject> allocatedProducts = ObjectCollector.getProductAllByJobID(job.getJobID(),job.getSuffix());
         
         String text = "Are you sure you want to delete selected Row?\nAll data will be permanently lost";
         String title = "Question";
         
         if(getOptionDialog(text, title) == JOptionPane.YES_OPTION){
+            
+            System.out.printf("DELETING JOB NO %s with suffix %s\n",job.getJobID(),job.getSuffix());
             
             if(!allocatedProducts.isEmpty()){
                 for (ProductAllObject allocatedProduct : allocatedProducts){                                        
@@ -443,7 +455,7 @@ public class TreeTableWrapper {
     
     private JobObject getJobByRow(int row){
         Object node = getNodeFromRow(row);
-        return ObjectCollector.getJobByID((int) model.getValueAt(node, 1));
+        return ObjectCollector.getJobByID((int) model.getValueAt(node, 1),(String) model.getValueAt(node, 21));
     }
     
     private ProductAllObject getProductByRow(int row){        
@@ -457,20 +469,37 @@ public class TreeTableWrapper {
     }        
 
     void filterByJob(String text) {
-        textFilter = text;
-        refreshTable();
-    }
+        if(keyTypeDelay()){
+            textFilter = text;
+            refreshTable();            
+        } 
+    }    
     
     void filterByProduct(String text) {
-        productFilter = text;
-        refreshTable();
+        if(keyTypeDelay()){
+            productFilter = text;
+            refreshTable(); 
+        }
     }
 
     void filterByRate(String text) {
-        rateFilter = text;
-        refreshTable();
+        if(keyTypeDelay()){
+            rateFilter = text;
+            refreshTable();
+        }
     }    
 
+    private boolean keyTypeDelay(){
+        endTime = System.currentTimeMillis();
+        if(endTime-startTime>300){
+            startTime = System.currentTimeMillis();
+            endTime = System.currentTimeMillis();
+            System.out.println("DELAY CATCHED FILTERING");
+            return true;
+        }        
+        return false;
+    }
+    
     private List<JobObject> filterJobObject(List<JobObject> jobs, String textFilter) {      
         List<JobObject> thisJob = jobs.stream().collect(Collectors.toList());
         int startSize = thisJob.size();
@@ -486,7 +515,7 @@ public class TreeTableWrapper {
     private List<JobObject> filterProductObject(List<JobObject> jobs) {
         for(int i = jobs.size()-1;i>=0;i--){
             boolean removeJob = true;
-            List<ProductAllObject> AllProducts = ObjectCollector.getProductAllByJobID(jobs.get(i).getJobID());
+            List<ProductAllObject> AllProducts = ObjectCollector.getProductAllByJobID(jobs.get(i).getJobID(),jobs.get(i).getSuffix());
             for (ProductAllObject AllProduct : AllProducts) {
                 if(AllProduct.search(productFilter)){
                     removeJob = false;

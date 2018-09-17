@@ -42,8 +42,10 @@ public abstract class AbstractDatabaseObject {
     public void dbDelete(){
         if(getDBID() instanceof String){
             db.dbDelete(getTableName(), getDBWhere(),(String) getDBID());   
+            System.out.println("ID is string");
         } else if (getDBID() instanceof Integer){            
             db.dbDelete(getTableName(), getDBWhere(),(int) getDBID());   
+            System.out.println("ID is INT");
         }
     }
     

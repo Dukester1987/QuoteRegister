@@ -1,2 +1,2 @@
-1.0.6
-- Possibility to add products ctrl+shift+p or Edit->Add Product
+1.2.6 
+- Fixed problem while editing job with suffix

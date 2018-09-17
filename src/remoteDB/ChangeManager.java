@@ -178,7 +178,9 @@ public class ChangeManager {
 
     private void deleteOperation(DBFunctions destination, ChangeLogView clw) {
         if(!isExistInDestination(destination, clw)){
-            System.out.println("We are good");            
+            System.out.println(clw.getSQLString());
+            System.out.println("We are good");
+            logOnDestination(destination, clw);
         } else {
             destination.executeQuery(clw.getSQLString());
             logOnDestination(destination, clw);
@@ -222,9 +224,14 @@ public class ChangeManager {
 
         } else if(clw.getAffectedTable().equalsIgnoreCase("AWS_Products") && clw.getOperation().equalsIgnoreCase("Insert")){ //keys ID, SiteID            
             query = String.format("SELECT * FROM %s WHERE CODE = '%s'", clw.getAffectedTable(),clw.getRowID());
+        
+        } else if(clw.getAffectedTable().equalsIgnoreCase("QR_Jobs") && clw.getOperation().equalsIgnoreCase("Insert")){ //keys ID, SiteID            
+            String suffix = getValuesFromInsert(clw.getSQLString(), 2);
+            query = String.format("SELECT * FROM %s WHERE ID = '%s' AND suffix = '%s'", clw.getAffectedTable(),clw.getRowID(),suffix);            
             
         } else {
             query = String.format("SELECT * FROM %s WHERE ID = '%s'", clw.getAffectedTable(),clw.getRowID());
+            System.out.println(query);
         }
         return destination.getRowCount(destination.runQuery(query))>0;
     }

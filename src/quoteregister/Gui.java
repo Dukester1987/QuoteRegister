@@ -256,6 +256,11 @@ public class Gui extends javax.swing.JFrame {
                 .addGap(0, 6, Short.MAX_VALUE))
         );
 
+        jobFilter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jobFilterActionPerformed(evt);
+            }
+        });
         jobFilter.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jobFilterKeyReleased(evt);
@@ -269,6 +274,11 @@ public class Gui extends javax.swing.JFrame {
             }
         });
 
+        productFilter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                productFilterActionPerformed(evt);
+            }
+        });
         productFilter.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 productFilterKeyReleased(evt);
@@ -514,7 +524,7 @@ public class Gui extends javax.swing.JFrame {
 
     private void jobFilterKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jobFilterKeyReleased
         //Filter is utilised
-        wrapper.filterByJob(jobFilter.getText());
+        //wrapper.filterByJob(jobFilter.getText());
     }//GEN-LAST:event_jobFilterKeyReleased
 
     private void syncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncActionPerformed
@@ -526,8 +536,16 @@ public class Gui extends javax.swing.JFrame {
     }//GEN-LAST:event_newProductActionPerformed
 
     private void productFilterKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_productFilterKeyReleased
-        wrapper.filterByProduct(productFilter.getText());
+        //wrapper.filterByProduct(productFilter.getText());
     }//GEN-LAST:event_productFilterKeyReleased
+
+    private void jobFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobFilterActionPerformed
+        wrapper.filterByJob(jobFilter.getText());
+    }//GEN-LAST:event_jobFilterActionPerformed
+
+    private void productFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productFilterActionPerformed
+        wrapper.filterByProduct(productFilter.getText());
+    }//GEN-LAST:event_productFilterActionPerformed
 
     /**
      * @param args the command line arguments

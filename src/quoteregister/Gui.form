@@ -411,6 +411,7 @@
     </Container>
     <Component class="javax.swing.JTextField" name="jobFilter">
       <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jobFilterActionPerformed"/>
         <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jobFilterKeyReleased"/>
       </Events>
     </Component>
@@ -426,6 +427,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="productFilter">
       <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="productFilterActionPerformed"/>
         <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="productFilterKeyReleased"/>
       </Events>
     </Component>

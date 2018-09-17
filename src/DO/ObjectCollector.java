@@ -51,7 +51,7 @@ public class ObjectCollector {
     
     public static List<User> getUsersForList(){
         return users.stream()
-                .filter(p -> p.hasRights("admin", "Sales"))
+                .filter(p -> p.hasRights("admin", "Sales") && p.getStatus()==1)
                 .collect(Collectors.toList());
     }    
     
@@ -128,9 +128,9 @@ public class ObjectCollector {
         return result.get(0);
     }    
     
-    public static List<ProductAllObject> getProductAllByJobID(int ID) {
+    public static List<ProductAllObject> getProductAllByJobID(int ID, String suffix) {
         List<ProductAllObject> result = productRates.stream()
-                .filter(item -> item.getJobID()==ID)
+                .filter(item -> item.getJobID()==ID && item.getSuffix().equals(suffix))
                 .collect(Collectors.toList());
         return result;
     }        

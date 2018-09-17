@@ -1,0 +1,21 @@
+Thu Aug 09 13:13:30 AEST 2018
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM QR_JOBS WHERE ID = '180727' AND SUFFIX = ''RIVERWOOD[*]'' "; SQL statement:
+SELECT * FROM QR_Jobs WHERE ID = '180727' AND suffix = ''Riverwood'' [42000-176]
+Thu Aug 09 13:13:31 AEST 2018
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM QR_JOBS WHERE ID = '100001' AND SUFFIX = ''017[*]'' "; SQL statement:
+SELECT * FROM QR_Jobs WHERE ID = '100001' AND suffix = ''017'' [42000-176]
+Thu Aug 09 13:13:31 AEST 2018
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM QR_JOBS WHERE ID = '180806' AND SUFFIX = ''A[*]'' "; SQL statement:
+SELECT * FROM QR_Jobs WHERE ID = '180806' AND suffix = ''A'' [42000-176]
+Thu Aug 09 13:13:31 AEST 2018
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM QR_JOBS WHERE ID = '180806' AND SUFFIX = ''B[*]'' "; SQL statement:
+SELECT * FROM QR_Jobs WHERE ID = '180806' AND suffix = ''b'' [42000-176]
+Thu Aug 09 13:13:31 AEST 2018
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM QR_JOBS WHERE ID = '180829' AND SUFFIX = ''A[*]'' "; SQL statement:
+SELECT * FROM QR_Jobs WHERE ID = '180829' AND suffix = ''a'' [42000-176]
+Thu Aug 09 13:13:31 AEST 2018
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM QR_JOBS WHERE ID = '180568' AND SUFFIX = ''A[*]'' "; SQL statement:
+SELECT * FROM QR_Jobs WHERE ID = '180568' AND suffix = ''a'' [42000-176]
+Thu Aug 09 13:13:31 AEST 2018
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM QR_JOBS WHERE ID = '100001' AND SUFFIX = ''18[*]'' "; SQL statement:
+SELECT * FROM QR_Jobs WHERE ID = '100001' AND suffix = ''18'' [42000-176]

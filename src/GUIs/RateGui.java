@@ -83,6 +83,8 @@ public class RateGui extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         specProject = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        externalTipping = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         notes = new javax.swing.JTextArea();
@@ -168,6 +170,14 @@ public class RateGui extends javax.swing.JFrame {
             }
         });
 
+        jLabel8.setText("External tipping");
+
+        externalTipping.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                externalTippingKeyReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -193,9 +203,13 @@ public class RateGui extends javax.swing.JFrame {
                                 .addComponent(transRate, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(specProject, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel8)
                                 .addGap(18, 18, 18)
-                                .addComponent(specProject, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addComponent(externalTipping, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 1, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -211,7 +225,10 @@ public class RateGui extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(specProject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel8)
+                        .addComponent(externalTipping, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(specProject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -311,8 +328,13 @@ public class RateGui extends javax.swing.JFrame {
         sumCount();
     }//GEN-LAST:event_specProjectKeyReleased
 
+    private void externalTippingKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_externalTippingKeyReleased
+        sumCount();
+    }//GEN-LAST:event_externalTippingKeyReleased
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<TruckGroupObject> DelType;
+    private javax.swing.JTextField externalTipping;
     private javax.swing.JButton insertor;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -322,6 +344,7 @@ public class RateGui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -334,7 +357,7 @@ public class RateGui extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void sumCount() {
-        Double tot = checkNumValidity(maCost)+checkNumValidity(transRate)+checkNumValidity(specProject);
+        Double tot = checkNumValidity(maCost)+checkNumValidity(transRate)+checkNumValidity(specProject)+checkNumValidity(externalTipping);
         totPrice.setText(""+tot);
         
     }
@@ -345,20 +368,21 @@ public class RateGui extends javax.swing.JFrame {
         Double materialCost = checkNumValidity(maCost);
         Double transport = checkNumValidity(transRate);
         Double specialProject = checkNumValidity(specProject);
+        Double externalT = checkNumValidity(externalTipping);
         Double totalPrice = checkNumValidity(totPrice);
         String notes = this.notes.getText();        
         ProductID = ProductID==null?getProductID():ProductID;
         if(rate!=null){
             String ID = rate.getID();
             if(checkExistingRate(rate)){
-                rate.setTransportRateObject(ProductID, ID, prod, materialCost, transport, specialProject, notes);
+                rate.setTransportRateObject(ProductID, ID, prod, materialCost, transport, specialProject, externalT, notes);
                 rate.dbUpdate();
             } else {
                 success = false;
             }
         } else {
             String ID = UUID.randomUUID().toString();
-            rate = new TransportRateObject(ProductID, ID, prod, materialCost, transport, specialProject, notes);   
+            rate = new TransportRateObject(ProductID, ID, prod, materialCost, transport, specialProject, externalT, notes);   
             if(checkExistingRate(rate)){
                 ObjectCollector.addTransportRate(rate);
                 rate.dbSave();
@@ -419,6 +443,7 @@ public class RateGui extends javax.swing.JFrame {
         maCost.setText(rate.getMaterialCost().toString());
         transRate.setText(rate.getTransportRate().toString());
         specProject.setText(rate.getSpecialProject().toString());
+        externalTipping.setText(rate.getExternalTipping().toString());
         notes.setText(rate.getNotes());
         ProductID = rate.getProductID();
         

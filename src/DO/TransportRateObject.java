@@ -13,11 +13,11 @@ public class TransportRateObject extends AbstractDatabaseObject {
     
     private String ProductID,ID,Notes;
     private TruckGroupObject truckGroupObject;
-    private Double materialCost, transportRate;
+    private Double materialCost, transportRate, externalTipping;
     private Double specialProject;
 
-    public TransportRateObject(String ProductID, String ID, TruckGroupObject truckGroupObject, Double materialCost, Double transportRate, Double specialProject, String notes) {
-        setTransportRateObject(ProductID, ID, truckGroupObject, materialCost, transportRate, specialProject, notes);
+    public TransportRateObject(String ProductID, String ID, TruckGroupObject truckGroupObject, Double materialCost, Double transportRate, Double specialProject, Double externalTipping, String notes) {
+        setTransportRateObject(ProductID, ID, truckGroupObject, materialCost, transportRate, specialProject, externalTipping, notes);
     }
 
     public String getProductID() {
@@ -61,7 +61,7 @@ public class TransportRateObject extends AbstractDatabaseObject {
     }
 
     public Double getTotalCost() {
-        return transportRate+materialCost;
+        return transportRate+materialCost+specialProject+externalTipping;
     }
     
     public String getNotes() {
@@ -72,26 +72,35 @@ public class TransportRateObject extends AbstractDatabaseObject {
         this.Notes = Notes;
     }    
     
-    public void setTransportRateObject(String ProductID, String ID, TruckGroupObject truckGroupObject, Double materialCost, Double transportRate, Double specialProject, String notes){
+    public void setTransportRateObject(String ProductID, String ID, TruckGroupObject truckGroupObject, Double materialCost, Double transportRate, Double specialProject, Double externalTipping, String notes){
         this.ProductID = ProductID;
         this.ID = ID;
         this.truckGroupObject = truckGroupObject;
         this.materialCost = materialCost;
         this.transportRate = transportRate; 
         this.specialProject = specialProject;
+        this.externalTipping = externalTipping;
         this.Notes = notes;
     }
 
     public Double getSpecialProject() {
         return specialProject;
     }
+    
+    public Double getExternalTipping() {
+        return externalTipping;
+    }
 
     public void setSpecialProject(Double specialProject) {
         this.specialProject = specialProject;
     }
     
+    public void setExternalTipping(Double externalTipping){
+        this.externalTipping = externalTipping;
+    }
+    
     public Object[] getTableObject(){        
-        return new Object[] {getTruckGroupObject(),null,null,ID,null,null,null,null,null,null,null,null,null,null,getTruckGroupObject(),getTotalCost(),getMaterialCost(),getTransportRate(),getSpecialProject(),getNotes()};        
+        return new Object[] {getTruckGroupObject(),null,null,ID,null,null,null,null,null,null,null,null,null,null,getTruckGroupObject(),getTotalCost(),getMaterialCost(),getTransportRate(),getSpecialProject(),getExternalTipping(),getNotes()};        
     }
 
     @Override
@@ -103,14 +112,16 @@ public class TransportRateObject extends AbstractDatabaseObject {
                 "Notes",
                 "MaterialCost",
                 "TransportRate",
-                "SpecialProject"},
+                "SpecialProject",
+                "ExternalTipping"},
                 {getID(),
                 getProductID(),
                 getTruckGroupObject().getID(),
                 getNotes(),
                 getMaterialCost(),
                 getTransportRate(),
-                getSpecialProject()}
+                getSpecialProject(),
+                getExternalTipping()}
         };
     }
     
@@ -123,7 +134,8 @@ public class TransportRateObject extends AbstractDatabaseObject {
             getNotes(),
             getMaterialCost(),
             getTransportRate(),
-            getSpecialProject()
+            getSpecialProject(),
+            getExternalTipping()
         };
     }         
 

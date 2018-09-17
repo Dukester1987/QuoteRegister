@@ -39,6 +39,8 @@ public class ProductGui extends javax.swing.JFrame {
     private boolean direction;
     private AddressObject address;
     private boolean isChanging = false;
+    private String jobSuffix;
+    private JobObject job;
 
     /**
      * Creates new form ProductGui
@@ -61,6 +63,7 @@ public class ProductGui extends javax.swing.JFrame {
         this.wrapper = wrapper;
         this.type = type;
         this.jobID = job.getJobID();
+        this.jobSuffix = job.getSuffix();
         startUP();   
     }
 
@@ -356,9 +359,11 @@ public class ProductGui extends javax.swing.JFrame {
     private boolean prepareNewJobObject(int[] selectedRows) throws Exception{ 
         boolean success = false;
         if(myProduct==null){ // creating new
-            if(selectedRows!=null)
-                jobID=getJobID(selectedRows);                  
-            myProduct = new ProductAllObject(ID, jobID, prod, vol, Notes, ongoingpr, direction, address);     
+            if(selectedRows!=null){
+                jobID=getJobID(selectedRows); 
+                jobSuffix = getJobSuffix(selectedRows);
+            }
+            myProduct = new ProductAllObject(ID, jobID, jobSuffix, prod, vol, Notes, ongoingpr, direction, address);     
             if(checkExistingProduct(myProduct)){
                 ObjectCollector.addProductRate(myProduct);
                 myProduct.dbSave();       
@@ -368,7 +373,7 @@ public class ProductGui extends javax.swing.JFrame {
                 myProduct = null;
             }
         } else { // update existing            
-            myProduct.setProductAllObject(ID, jobID, prod, vol, Notes, ongoingpr, direction, address);            
+            myProduct.setProductAllObject(ID, jobID, jobSuffix, prod, vol, Notes, ongoingpr, direction, address);            
             if(checkExistingProduct(myProduct)){            
                 myProduct.dbUpdate();           
                 success = true;
@@ -413,12 +418,23 @@ public class ProductGui extends javax.swing.JFrame {
     }
 
     private int getJobID(int[] selectedRows) {
-        int row = selectedRows[0];
+        return (int) getValueFromTable(selectedRows[0], 1);        
+    }
+    
+    private String getJobSuffix(int[] selectedRows) {
+        try { 
+            return (String) getValueFromTable(selectedRows[0], 20);        
+        } catch(NullPointerException e){
+            return "";
+        }
+    }    
+
+    private Object getValueFromTable(int row,int column){        
         Object node = wrapper.getNodeFromRow(row);
         DefaultTreeTableModel model = wrapper.getModel();
-        return (int) model.getValueAt(node, 1);        
+        return model.getValueAt(node, column);       
     }
-
+    
     private void initValues() {
         setTitle("Edit Product");
         insertor.setText("Edit");        
@@ -426,7 +442,8 @@ public class ProductGui extends javax.swing.JFrame {
         product.setSelectedItem(myProduct.getProduct());
         volume.setText(myProduct.getVolume().toString());
         notes.setText(myProduct.getNotes());
-        jobID = myProduct.getJobID();        
+        jobID = myProduct.getJobID();       
+        jobSuffix = myProduct.getSuffix();
         ongoing.setSelected(myProduct.isOngoing());
         setSelectedRadio(myProduct.isDirection());
         setAddress(myProduct.getAddress());
@@ -483,7 +500,8 @@ public class ProductGui extends javax.swing.JFrame {
     }
 
     private boolean checkExistingProduct(ProductAllObject myProduct) {        
-        List<ProductAllObject> prods = ObjectCollector.getProductAllByJobID(myProduct.getJobID());
+        System.out.printf("checking existing product for job ID is %s and suffix is %s\n",myProduct.getJobID(),myProduct.getSuffix());
+        List<ProductAllObject> prods = ObjectCollector.getProductAllByJobID(myProduct.getJobID(), myProduct.getSuffix());
         for (ProductAllObject prd : prods) {
             if(prd.getProduct().getCODE().equals(myProduct.getProduct().getCODE())){
                 if(!prd.getID().equals(myProduct.getID())){

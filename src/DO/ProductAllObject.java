@@ -12,18 +12,19 @@ package DO;
 public class ProductAllObject extends AbstractDatabaseObject{
     
     private String ID;
-    private int JobID;
+    private int JobID, oldJobID;
+    private String suffix, oldSuffix;
     private ProductObject Product;
     private String notes;
     private Double volume;
     private boolean ongoing;
     private AddressObject address;
-    private boolean direction;
-    private int oldJobID;
+    private boolean direction;    
 
-    public ProductAllObject(String ID, int JobID, ProductObject Product, Double volume, String notes, boolean ongoing, boolean direction, AddressObject address) {
-        setProductAllObject(ID, JobID, Product, volume, notes, ongoing, direction, address);        
+    public ProductAllObject(String ID, int JobID, String suffix, ProductObject Product, Double volume, String notes, boolean ongoing, boolean direction, AddressObject address) {
+        setProductAllObject(ID, JobID, suffix, Product, volume, notes, ongoing, direction, address);        
         oldJobID = JobID;
+        oldSuffix = suffix;
     }
     
     public boolean isOngoing() {
@@ -41,6 +42,22 @@ public class ProductAllObject extends AbstractDatabaseObject{
     public int getJobID() {
         return JobID;
     }
+
+    public String getSuffix() {
+        return suffix;
+    }
+
+    public void setSuffix(String suffix) {
+        this.suffix = suffix;
+    }
+
+    public String getOldSuffix() {
+        return oldSuffix;
+    }
+
+    public void setOldSuffix(String oldSuffix) {
+        this.oldSuffix = oldSuffix;
+    }        
 
     public void setJobID(int JobID) {
         this.JobID = JobID;
@@ -92,9 +109,10 @@ public class ProductAllObject extends AbstractDatabaseObject{
         this.oldJobID = oldJobID;
     }    
     
-    public void setProductAllObject(String ID, int JobID, ProductObject Product, Double volume, String notes, boolean ongoing, boolean direction, AddressObject address){
+    public void setProductAllObject(String ID, int JobID, String suffix, ProductObject Product, Double volume, String notes, boolean ongoing, boolean direction, AddressObject address){
         this.ID = ID;        
-        this.JobID = JobID;        
+        this.JobID = JobID;      
+        this.suffix = suffix;
         this.Product = Product;        
         this.volume = volume;        
         this.notes = notes;                
@@ -104,7 +122,7 @@ public class ProductAllObject extends AbstractDatabaseObject{
     }
     
     public Object[] getTableObject(){
-        return new Object[] {getProduct(),null,getID(),null,null,null,null,null,null,null,null,null,getProduct(),getVolume(),getOnGoingText(),null,null,null,null,getTableNotes()};
+        return new Object[] {getProduct(),null,getID(),null,null,null,null,null,null,null,null,null,getProduct(),getVolume(),getOnGoingText(),null,null,null,null,null,getTableNotes()};
     }
 
     public Double getVolume() {
@@ -131,6 +149,7 @@ public class ProductAllObject extends AbstractDatabaseObject{
         return new Object[][]{
                 {"ID",
                 "JobID",
+                "suffix",
                 "ProductID",
                 "Notes",
                 "Volume",
@@ -142,6 +161,7 @@ public class ProductAllObject extends AbstractDatabaseObject{
                 "State"},
                 {getID(),
                 getJobID(),
+                getSuffix(),
                 getProduct().getCODE(),
                 getNotes(),
                 getVolume(),
@@ -174,7 +194,7 @@ public class ProductAllObject extends AbstractDatabaseObject{
     @Override
     public Object[][] getDBWhere() {
         return new Object[][]{
-            {"ID","JobID"},{"=","="},{getID(),getOldJobID()},{"AND","AND"}
+            {"ID","JobID","suffix"},{"=","=","="},{getID(),getOldJobID(),getOldSuffix()},{"AND","AND","AND"}
         };
     }
 
@@ -192,6 +212,7 @@ public class ProductAllObject extends AbstractDatabaseObject{
     public void dbUpdate() {
         super.dbUpdate();
         oldJobID = JobID;
+        oldSuffix = suffix;
     }
     
     

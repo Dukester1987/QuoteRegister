@@ -1,0 +1,6 @@
+Mon Jul 09 12:26:49 AEST 2018
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM QR_JOBS WHERE ID = '180685' AND SUFFIX = ''A[*]'' "; SQL statement:
+SELECT * FROM QR_Jobs WHERE ID = '180685' AND suffix = ''a'' [42000-176]
+Mon Jul 09 12:30:50 AEST 2018
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM QR_JOBS WHERE ID = '180685' AND SUFFIX = ''A[*]'' "; SQL statement:
+SELECT * FROM QR_Jobs WHERE ID = '180685' AND suffix = ''a'' [42000-176]

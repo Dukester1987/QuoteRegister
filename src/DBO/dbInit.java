@@ -124,6 +124,7 @@ public class dbInit {
                         ,pr.getDouble("MaterialCost")
                         ,pr.getDouble("TransportRate")
                         ,pr.getDouble("SpecialProject")
+                        ,pr.getDouble("ExternalTipping")
                         ,pr.getString("Notes"));
                 ObjectCollector.addTransportRate(tgO);                
             }
@@ -233,6 +234,7 @@ public class dbInit {
                 
                 ProductAllObject tgO = new ProductAllObject(rs.getString("ID"),
                         rs.getInt("JobID"), 
+                        rs.getString("suffix"),
                         ObjectCollector.getProductByID(rs.getString("ProductID")), 
                         rs.getDouble("Volume"), 
                         rs.getString("Notes"),

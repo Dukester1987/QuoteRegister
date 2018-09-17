@@ -478,6 +478,7 @@ CREATE TABLE IF NOT EXISTS `QR_Contacts` (
 CREATE TABLE IF NOT EXISTS `QR_JobProducts` (
   `ID` varchar(36)  NOT NULL,
   `JobID` int(11) NOT NULL,
+  `suffix` varchar(10) NOT NULL DEFAULT '',
   `ProductID` Varchar(130) NOT NULL,
   `Notes` text  NOT NULL,
   `Volume` decimal(10,2) NOT NULL,
@@ -541,7 +542,8 @@ CREATE TABLE IF NOT EXISTS `QR_TransportRate` (
   `Notes` text NOT NULL,
   `MaterialCost` decimal(10,2) NOT NULL,
   `TransportRate` decimal(10,2) NOT NULL,
-  `SpecialProject` decimal(10,2) NULL
+  `SpecialProject` decimal(10,2) NULL,
+  `ExternalTipping` decimal(10,2) NULL
 );
 
 --

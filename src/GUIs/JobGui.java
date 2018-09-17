@@ -16,6 +16,9 @@ import Functions.Functions;
 import Functions.TimeWrapper;
 import java.sql.Date;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import org.jdesktop.swingx.JXTreeTable;
@@ -75,8 +78,11 @@ public class JobGui extends javax.swing.JFrame {
         this.selectedRow = selectedRow;
         this.table = wrapper.getTable();        
         
+        System.out.println("init components");
         initComponents();        
+        System.out.println("starting up");
         startUp();
+        System.out.println("init values");
         initValues();
         
         GuiIcon GuiIcon = new GuiIcon(this);        
@@ -109,7 +115,6 @@ public class JobGui extends javax.swing.JFrame {
         JobID = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         Internal = new javax.swing.JCheckBox();
-        jSpinner1 = new javax.swing.JSpinner();
         suffix = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -199,7 +204,6 @@ public class JobGui extends javax.swing.JFrame {
 
         Internal.setText("Internal");
         jPanel1.add(Internal, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, -1, -1));
-        jPanel1.add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, -1, -1));
         jPanel1.add(suffix, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, 50, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/ok16.png"))); // NOI18N
@@ -458,7 +462,6 @@ public class JobGui extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JComboBox<User> jobOwner;
     private javax.swing.JTextArea notes;
     private com.toedter.calendar.JDateChooser startDate;
@@ -480,7 +483,8 @@ public class JobGui extends javax.swing.JFrame {
         List<JobObject> jobs = ObjectCollector.getJobs();
         if(jobs.stream().anyMatch(p -> p.getJobID()==newID)){
             System.out.println("okay there is another match for this Job ID");
-            if(jobs.stream().anyMatch(p -> p.getSuffix().equalsIgnoreCase(suffix.getText()))){
+            List<JobObject> filteredJobs = jobs.stream().filter(p -> p.getJobID()==newID).collect(Collectors.toList());
+            if(filteredJobs.stream().anyMatch(p -> p.getSuffix().equalsIgnoreCase(suffix.getText()))){
                 System.out.println("okay there is also suffix for this JobID exists in a database");
                 System.out.println("JobID of eddited JOB IS:");
                 if(Job==null || Job.getOldJobID()!=newID || !Job.getOldSuffix().equalsIgnoreCase(suffix.getText())){              
@@ -548,12 +552,13 @@ public class JobGui extends javax.swing.JFrame {
         //sreturn Job.getTreeTableObject();     
     }
 
-    private void initValues() {                     
+    private void initValues() {               
         newID = (int) getValue(1);
-        String sfix = (String) getValue(20);
+        String sfix = (String) getValue(21);
         
         JobID.setText(Integer.toString(newID));        
         //JobID.setEnabled(false);
+        System.out.println("getting jobid "+newID+" and suffix "+ sfix);
         Job = ObjectCollector.getJobByID(newID,sfix);
         suffix.setText(Job.getSuffix());        
         status.setSelectedItem(Job.getStatus());
@@ -590,8 +595,8 @@ public class JobGui extends javax.swing.JFrame {
         freezeListeners = false;
     }
 
-    private void startUp() {
-        JobID.setText(Integer.toString(ObjectCollector.getNextJobID()));
+    private void startUp() {        
+        JobID.setText(Integer.toString(ObjectCollector.getNextJobID()));        
         AutoCompleteDecorator.decorate(client);
         AutoCompleteDecorator.decorate(contact);
         AutoCompleteDecorator.decorate(jobOwner);
@@ -602,7 +607,7 @@ public class JobGui extends javax.swing.JFrame {
         
         users = ObjectCollector.getUsersForList();        
         addUsersToDropDown(users,jobOwner);                
-        refreshClients();        
+        refreshClients();               
         //contacts = ObjectCollector.getContacts();
     }
 
@@ -666,9 +671,13 @@ public class JobGui extends javax.swing.JFrame {
 
     private void addUsersToDropDown(List<User> users, JComboBox<User> jobOwner) {
         jobOwner.removeAllItems();
-        for (User user : users) {
-            jobOwner.addItem(user);
-        }        
+        if(Gui.db.userData.hasRights("restriction", "salesMyself")){        
+            jobOwner.addItem(Gui.db.userData);
+        } else {
+            for (User user : users) {
+                jobOwner.addItem(user);
+            }       
+        }
         jobOwner.setSelectedItem(ObjectCollector.getUserByID(Gui.db.userData.getId()));
         System.out.println("Selected user should be "+ Gui.db.userData);
     }

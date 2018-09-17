@@ -1,0 +1,15 @@
+Tue May 29 15:28:28 AEST 2018
+org.h2.jdbc.JdbcSQLException: Unique index or primary key violation: "PRIMARY_KEY_F7 ON PUBLIC.QR_JOBS(ID, SUFFIX, USERID) VALUES ( /* key:1433 */ 180536, '', 66, null, null, null, null, null, null, null, null, null, null, null, null, null, null)"; SQL statement:
+INSERT INTO QR_Jobs (`ID`, `suffix`, `UserID`, `DateQuoted`, `StartDate`, `EndDate`, `QuoteType`, `Status`, `Notes`, `ClientID`, `ContactID`, `WANID`, `Street`, `City`, `ZIP`, `State`, `Internal`) VALUES (180536, '', 66, '2018-05-25', '2018-05-25', '2018-05-25', 'E-Mail', 'Recieved', '', 5, 63, '', '94-100 Explores Way', 'St Clair', '', 'NSW', false) [23505-176]
+Tue May 29 15:28:28 AEST 2018
+org.h2.jdbc.JdbcSQLException: Unique index or primary key violation: "PRIMARY_KEY_F7 ON PUBLIC.QR_JOBS(ID, SUFFIX, USERID) VALUES ( /* key:1434 */ 180537, '', 49, null, null, null, null, null, null, null, null, null, null, null, null, null, null)"; SQL statement:
+INSERT INTO QR_Jobs (`ID`, `suffix`, `UserID`, `DateQuoted`, `StartDate`, `EndDate`, `QuoteType`, `Status`, `Notes`, `ClientID`, `ContactID`, `WANID`, `Street`, `City`, `ZIP`, `State`, `Internal`) VALUES (180537, '', 49, '2018-05-25', '2018-05-25', '2018-05-25', 'E-Mail', 'Recieved', '', 5, 579, '', 'Mamre Road', 'ST MARYS', '', 'NSW', false) [23505-176]
+Tue May 29 15:28:28 AEST 2018
+org.h2.jdbc.JdbcSQLException: Unique index or primary key violation: "PRIMARY_KEY_F7 ON PUBLIC.QR_JOBS(ID, SUFFIX, USERID) VALUES ( /* key:1435 */ 180538, '', 66, null, null, null, null, null, null, null, null, null, null, null, null, null, null)"; SQL statement:
+INSERT INTO QR_Jobs (`ID`, `suffix`, `UserID`, `DateQuoted`, `StartDate`, `EndDate`, `QuoteType`, `Status`, `Notes`, `ClientID`, `ContactID`, `WANID`, `Street`, `City`, `ZIP`, `State`, `Internal`) VALUES (180538, '', 66, '2018-05-25', '2018-05-25', '2018-05-25', 'E-Mail', 'Recieved', '', 16, 522, '', '27 Campbell Street', 'RIVERSTONE', '', 'NSW', false) [23505-176]
+Tue May 29 15:28:28 AEST 2018
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM QR_JOBS WHERE ID = '180557' AND SUFFIX = ''A[*]'' "; SQL statement:
+SELECT * FROM QR_Jobs WHERE ID = '180557' AND suffix = ''a'' [42000-176]
+Tue May 29 15:28:28 AEST 2018
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM QR_JOBS WHERE ID = '180557' AND SUFFIX = ''B[*]'' "; SQL statement:
+SELECT * FROM QR_Jobs WHERE ID = '180557' AND suffix = ''b'' [42000-176]
